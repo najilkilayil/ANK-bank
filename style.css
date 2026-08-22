@@ -115,3 +115,27 @@ body {
         transform: translateX(0);
     }
 }
+
+/* frame 3 */
+.form_main {
+    background-color: red;
+    width: 60%;
+    height: 80%;
+    flex-direction: column;
+    align-items: start;
+    display: none;
+}
+
+.form_main input {
+    width: 40%;
+    padding: 15px 10px;
+    border-radius: 16px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.form_main button {
+    width: 100px;
+    height: 50px;
+    margin-top: 30px;
+}
