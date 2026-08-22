@@ -135,7 +135,6 @@ function optBal() {
 }
 
 let PIN = passInput.value
-
 function pinInputFun(Xinput, num) {
     function pinNum(num) {
         if (Xinput.value.length < 4) {
@@ -150,7 +149,9 @@ function pinInputFun(Xinput, num) {
     function checkPin() {
         if (Xinput.value === PIN) {
             alert("Correct Password")
-            return
+            if (Xinput === bal_pin_input) {
+                showBal()
+            }
         }
         else {
             alert("Incorrect Password")
@@ -167,4 +168,16 @@ function pinInputFun(Xinput, num) {
     else {
         pinNum(num)
     }
+}
+
+function showBal() {
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="bal_view" id="bal_view">
+            <h3>Available Balance</h3>
+            <h2>₹ ${balInput.value}</h2>
+
+            <button onclick="showMenu()">Back</button>
+        </div>
+    `
 }
