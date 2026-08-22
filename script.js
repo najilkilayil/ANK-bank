@@ -16,7 +16,7 @@ function welcomeLoad() {
         }, 2500);
         setTimeout(() => {
             welcomeMain.id = "move_left_anim"
-            fillFormMain.id - "move_right_anim"
+            fillFormMain.id = "move_right_anim"
             fillFormMain.style.display = "flex"
             setTimeout(() => {
                 welcomeMain.style.display = "none"
@@ -42,12 +42,35 @@ let passInput = document.getElementById("form_pin")
 let conPassInput = document.getElementById("form_pin_con")
 let fillFormSubBtn = document.getElementById("form_submit_btn")
 
-fillFormSubBtn.addEventListener("click", function() {
+fillFormSubBtn.addEventListener("click", function(event) {
+    event.preventDefault()
+
     if (nameInput.value === "" || balInput.value === "" || passInput.value.length !== 4) {
         alert("Fill all blanks!")
+        return
     }
 
     if (passInput.value !== conPassInput.value) {
         alert("PIN is not match!")
+        return
     }
+
+    showAccSummary()
 })
+
+let accSummaryView = document.getElementById("acc_sum_view")
+function showAccSummary() {
+    fillFormMain.style.display = "none"
+    accSummaryView.style.display = "flex"
+    accSummaryView.innerHTML = `
+        <h2>Account Created Successfully</h2>
+        <p>Account Name : ${nameInput.value}</p>
+        <p>Account No. : ${accInput.value}</p>
+        <p>PIN : ${passInput.value}</p>
+        <h3>Please rember your account no.</h3>
+    `
+
+    setTimeout(() => {
+        accSummaryView.style.display = "none"
+    }, 3000);
+}
