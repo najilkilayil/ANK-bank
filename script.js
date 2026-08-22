@@ -37,7 +37,7 @@ let accInput = document.getElementById("form_acc_number")
 function AccountNum() {
     let digit1 = Math.floor(1000 + Math.random() * 20)
     let digit2 = Math.floor(1000 + Math.random() * 9000)
-    
+
     return `ANK-${digit1}-${digit2}`
 }
 
@@ -48,7 +48,7 @@ conPassInput.value = "1111"
 
 
 
-fillFormSubBtn.addEventListener("click", function(event) {
+fillFormSubBtn.addEventListener("click", function (event) {
     event.preventDefault()
 
     if (nameInput.value === "" || balInput.value === "" || passInput.value.length !== 4) {
@@ -95,10 +95,76 @@ function showMenu() {
             <h3>${accInput.value}</h3>
         </div>
         <div class="menu_options" id="menu_options">
-            <button>Balance</button>
+            <button onclick="optBal()">Balance</button>
             <button>Deposite</button>
             <button>Withdraw</button> 
             <button>Change PIN</button>
             <button>Quit</button>
     `
+}
+
+function optBal() {
+    subSection.style.display = "block"
+    mainSection.innerHTML = `
+        <div class="pin_text" id="pin_text">
+            <h3>Enter Your PIN</h3>
+            <input type="password" id="bal_pin_input" maxlength="4" readonly>
+        </div>
+    `
+
+    let bal_pin_input = document.getElementById("bal_pin_input")
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="pinInputFun(bal_pin_input, '1')">1</button>
+            <button onclick="pinInputFun(bal_pin_input, '2')">2</button>
+            <button onclick="pinInputFun(bal_pin_input, '3')">3</button>
+                
+            <button onclick="pinInputFun(bal_pin_input, '4')">4</button>
+            <button onclick="pinInputFun(bal_pin_input, '5')">5</button>
+            <button onclick="pinInputFun(bal_pin_input, '6')">6</button>
+                
+            <button onclick="pinInputFun(bal_pin_input, '7')">7</button>
+            <button onclick="pinInputFun(bal_pin_input, '8')">8</button>
+            <button onclick="pinInputFun(bal_pin_input, '9')">9</button>
+                
+            <button onclick="pinInputFun(bal_pin_input, 'clear')">Clear</button>
+            <button onclick="pinInputFun(bal_pin_input, '0')">0</button>
+            <button onclick="pinInputFun(bal_pin_input, 'check')">Check</button>
+        </div>
+    `
+}
+
+let PIN = passInput.value
+
+function pinInputFun(Xinput, num) {
+    function pinNum(num) {
+        if (Xinput.value.length < 4) {
+            Xinput.value += num
+        }
+    }
+
+    function clearPin() {
+        Xinput.value = ""
+    }
+
+    function checkPin() {
+        if (Xinput.value === PIN) {
+            alert("Correct Password")
+            return
+        }
+        else {
+            alert("Incorrect Password")
+            return
+        }
+    }
+
+    if (num === "clear") {
+        clearPin()
+    }
+    else if (num === "check") {
+        checkPin()
+    }
+    else {
+        pinNum(num)
+    }
 }

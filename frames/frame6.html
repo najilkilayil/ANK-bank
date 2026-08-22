@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 6</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main class="real_main" id="real_main" style="display: flex;">
+        <section class="main_section" id="main_section">
+            <div class="pin_text" id="pin_text">
+                <h3>Enter Your PIN</h3>
+                <input type="password" id="bal_pin_input" maxlength="4" readonly>
+            </div>
+        </section>
+
+        <section class="sub_section" id="sub_section">
+            <div class="dial_pad" id="dial_pad">
+                <button onclick="pinInputFun(bal_pin_input, '1')">1</button>
+                <button onclick="pinInputFun(bal_pin_input, '2')">2</button>
+                <button onclick="pinInputFun(bal_pin_input, '3')">3</button>
+                
+                <button onclick="pinInputFun(bal_pin_input, '4')">4</button>
+                <button onclick="pinInputFun(bal_pin_input, '5')">5</button>
+                <button onclick="pinInputFun(bal_pin_input, '6')">6</button>
+                
+                <button onclick="pinInputFun(bal_pin_input, '7')">7</button>
+                <button onclick="pinInputFun(bal_pin_input, '8')">8</button>
+                <button onclick="pinInputFun(bal_pin_input, '9')">9</button>
+                
+                <button onclick="pinInputFun(bal_pin_input, 'clear')">Clear</button>
+                <button onclick="pinInputFun(bal_pin_input, '0')">0</button>
+                <button onclick="pinInputFun(bal_pin_input, 'check')">Check</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let passInput = '1111'
+        let bal_pin_input = document.getElementById("bal_pin_input")
+        let PIN = passInput
+        
+        function pinInputFun(Xinput, num) {
+            function pinNum(num) {
+                if (Xinput.value.length < 4) {
+                    Xinput.value += num
+                }
+            }
+
+            function clearPin() {
+                Xinput.value = ""  
+            }
+
+            function checkPin() {
+                if (Xinput.value === PIN) {
+                    alert("Correct Password")
+                    return
+                }
+                else {
+                    alert("Incorrect Password")
+                    return
+                }
+            }
+
+            if (num === "clear") {
+                clearPin()
+            }
+            else if (num === "check") {
+                checkPin()
+            }
+            else {
+                pinNum(num)
+            }
+        }
+    </script>
+</body>
+</html>
