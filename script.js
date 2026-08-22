@@ -3,6 +3,13 @@ let loadingMain = document.getElementById("loading_main")
 let welcomeMain = document.getElementById("welcome_div")
 let fillFormMain = document.getElementById("form_main")
 
+
+let nameInput = document.getElementById("form_full_name")
+let balInput = document.getElementById("form_bal_amount")
+let passInput = document.getElementById("form_pin")
+let conPassInput = document.getElementById("form_pin_con")
+let fillFormSubBtn = document.getElementById("form_submit_btn")
+
 welcomeLoad()
 
 function welcomeLoad() {
@@ -35,12 +42,11 @@ function AccountNum() {
 }
 
 accInput.value = AccountNum()
+nameInput.value = "Robert John"
+passInput.value = "1111"
+conPassInput.value = "1111"
 
-let nameInput = document.getElementById("form_full_name")
-let balInput = document.getElementById("form_bal_amount")
-let passInput = document.getElementById("form_pin")
-let conPassInput = document.getElementById("form_pin_con")
-let fillFormSubBtn = document.getElementById("form_submit_btn")
+
 
 fillFormSubBtn.addEventListener("click", function(event) {
     event.preventDefault()
@@ -57,7 +63,11 @@ fillFormSubBtn.addEventListener("click", function(event) {
 
     showAccSummary()
 })
-
+let borderMain = document.getElementById("real_main")
+let mainSection = document.getElementById("main_section")
+let subSection = document.getElementById("sub_section")
+let welcomeTextHead = document.getElementById("welcome_text")
+let menuOptionsDiv = document.getElementById("menu_options")
 let accSummaryView = document.getElementById("acc_sum_view")
 function showAccSummary() {
     fillFormMain.style.display = "none"
@@ -72,5 +82,23 @@ function showAccSummary() {
 
     setTimeout(() => {
         accSummaryView.style.display = "none"
+        borderMain.style.display = "flex"
+        showMenu()
     }, 3000);
+}
+
+function showMenu() {
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="welcome_text" id="welcome_text">
+            <h1>Welcome, ${nameInput.value}</h1>
+            <h3>${accInput.value}</h3>
+        </div>
+        <div class="menu_options" id="menu_options">
+            <button>Balance</button>
+            <button>Deposite</button>
+            <button>Withdraw</button> 
+            <button>Change PIN</button>
+            <button>Quit</button>
+    `
 }

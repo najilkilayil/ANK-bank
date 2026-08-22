@@ -154,3 +154,46 @@ body {
 .acc_sum_view h2, .acc_sum_view p, .acc_sum_view h3 {
     padding-left: 10%;
 }
+
+/* frame 5 */
+.real_main {
+    background-color: blue;
+    width: 80%;
+    height: 80%;
+    /* display: flex; */
+    display: none;
+}
+
+.main_section {
+    background-color: blueviolet;
+    height: 100%;
+    width: 60%;
+}
+
+.sub_section {
+    background-color: cadetblue;
+    height: 100%;
+    width: 40%;
+}
+
+.welcome_text {
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.menu_options {
+    background-color: chartreuse;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.menu_options button {
+    height: 50px;
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 18px;
+    font-weight: 600;
+}
