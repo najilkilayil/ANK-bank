@@ -350,13 +350,13 @@ function withWindow() {
             <h3>Withdraw Money</h3>
 
             <div class="with_money_btns" id="with_money_btns">
-                <button>₹ 100</button>
-                <button>₹ 200</button>
+                <button onclick="withdrawAmount(100)">₹ 100</button>
+                <button onclick="withdrawAmount(200)">₹ 200</button>
                     
-               <button>₹ 500</button>
-               <button>₹ 1000</button>
+               <button onclick="withdrawAmount(500)">₹ 500</button>
+               <button onclick="withdrawAmount(1000)">₹ 1000</button>
                     
-                <button>₹ 2000</button>
+                <buttononclick="withdrawAmount(2000)">₹ 2000</button>
                 <button id="with_money_btn_other">Other</button>
             </div>
 
