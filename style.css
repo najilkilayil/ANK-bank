@@ -298,3 +298,16 @@ body {
     width: 320px;
     height: 30px;
 }
+
+/* frame 11 */
+.load_process {
+    margin-top: 25%;
+    width: 100%;
+    height: 40%;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+}
