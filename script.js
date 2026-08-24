@@ -179,7 +179,7 @@ function balWindow() {
     mainSection.innerHTML = `
         <div class="bal_view" id="bal_view">
             <h3>Available Balance</h3>
-            <h2>₹ ${balInput.value}</h2>
+            <h2>₹ ${balAmount}</h2>
 
             <button onclick="showMenu()">Back</button>
         </div>
@@ -277,7 +277,7 @@ function moneyInputFun(moneyInput, num) {
     
     function enterMoney() {
         depoMoney = moneyInput.value
-        alert(`Your deposited money ${depoMoney}`)
+        depoWindowSuccess()
     }
 
     if (num === "clear") {
@@ -289,4 +289,21 @@ function moneyInputFun(moneyInput, num) {
     else {
         moneyAdd(num)
     }
+}
+
+let balAmount = Number(balInput.value)
+function depoWindowSuccess() {
+    balAmount += Number(depoMoney)
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="depo_success" id="depo_success">
+            <h3>Deposit Successfully</h3>
+            <h2>₹ ${depoMoney}</h2>
+
+            <h3>Current Balance</h3>
+            <h2>₹ ${balAmount}}</h2>
+
+            <button onclick="showMenu()">Back</button>
+        </div>
+    `
 }
