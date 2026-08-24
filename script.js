@@ -97,7 +97,7 @@ function showMenu() {
         <div class="menu_options" id="menu_options">
             <button onclick="optBal()">Balance</button>
             <button onclick="optDepo()">Deposite</button>
-            <button>Withdraw</button> 
+            <button onclick="optWith()">Withdraw</button> 
             <button>Change PIN</button>
             <button>Quit</button>
     `
@@ -149,12 +149,14 @@ function pinInputFun(Xinput, num) {
 
     function checkPin() {
         if (Xinput.value === PIN) {
-            alert("Correct Password")
             if (Xinput === balPinInput) {
                 balWindow()
             }
             else if (Xinput === depoPinInput) {
                 depoWindow()
+            }
+            else if (Xinput === withPinInput) {
+                withWindow()
             }
         }
         else {
@@ -306,4 +308,134 @@ function depoWindowSuccess() {
             <button onclick="showMenu()">Back</button>
         </div>
     `
+}
+
+let withPinInput
+function optWith() {
+    subSection.style.display = "block"
+    mainSection.innerHTML = `
+        <div class="pin_text" id="pin_text">
+            <h3>Enter Your PIN</h3>
+            <input type="password" id="with_pin_input" maxlength="4" readonly>
+        </div>
+    `
+
+    withPinInput = document.getElementById("with_pin_input")
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="pinInputFun(withPinInput, '1')">1</button>
+            <button onclick="pinInputFun(withPinInput, '2')">2</button>
+            <button onclick="pinInputFun(withPinInput, '3')">3</button>
+                
+            <button onclick="pinInputFun(withPinInput, '4')">4</button>
+            <button onclick="pinInputFun(withPinInput, '5')">5</button>
+            <button onclick="pinInputFun(withPinInput, '6')">6</button>
+                
+            <button onclick="pinInputFun(withPinInput, '7')">7</button>
+            <button onclick="pinInputFun(withPinInput, '8')">8</button>
+            <button onclick="pinInputFun(withPinInput, '9')">9</button>
+                
+            <button onclick="pinInputFun(withPinInput, 'clear')">Clear</button>
+            <button onclick="pinInputFun(withPinInput, '0')">0</button>
+            <button onclick="pinInputFun(withPinInput, 'check')">Check</button>
+        </div>
+    `
+}
+
+let withCustomInput
+function withWindow() {
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="with_view" id="with_view">
+            <h3>Withdraw Money</h3>
+
+            <div class="with_money_btns" id="with_money_btns">
+                <button>₹ 100</button>
+                <button>₹ 200</button>
+                    
+               <button>₹ 500</button>
+               <button>₹ 1000</button>
+                    
+                <button>₹ 2000</button>
+                <button id="with_money_btn_other">Other</button>
+            </div>
+
+            <div class="with_money_custom_input" id="with_money_custom_input">
+                <input type="text" readonly id="with_money_custom_input_el">
+                <p id="with_error_text_custom"></p>
+            </div>
+        </div>
+    `
+
+    let withOtherBtn = document.getElementById("with_money_btn_other")
+    let withCustomDiv = document.getElementById("with_money_custom_input")
+
+    withCustomInput = document.getElementById("with_money_custom_input_el")
+    let withCustomErrorText = document.getElementById("with_error_text_custom")
+
+    withOtherBtn.addEventListener("click", function() {
+        withCustomDiv.style.display = "block"
+        withCustomInput.addEventListener("input", function() {
+            let amount = Number(withCustomInput.value)
+
+            if (amount % 100 !== 0) {
+                withCustomErrorText.textContent = "Amount must be a multiple of ₹100"
+            }
+            else {
+                withCustomErrorText.textContent = ""
+            }
+        })
+        customAmountWindow()
+    })
+}
+
+function customAmountWindow() {
+    subSection.style.display = "block"
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="withInputFun(withCustomInput, '1')">1</button>
+            <button onclick="withInputFun(withCustomInput, '2')">2</button>
+            <button onclick="withInputFun(withCustomInput, '3')">3</button>
+                
+            <button onclick="withInputFun(withCustomInput, '4')">4</button>
+            <button onclick="withInputFun(withCustomInput, '5')">5</button>
+            <button onclick="withInputFun(withCustomInput, '6')">6</button>
+                
+            <button onclick="withInputFun(withCustomInput, '7')">7</button>
+            <button onclick="withInputFun(withCustomInput, '8')">8</button>
+            <button onclick="withInputFun(withCustomInput, '9')">9</button>
+                
+            <button onclick="withInputFun(withCustomInput, 'clear')">Clear</button>
+            <button onclick="withInputFun(withCustomInput, '0')">0</button>
+            <button onclick="withInputFun(withCustomInput, 'enter')">Enter</button>
+        </div>
+    `
+}
+
+let withAmount
+function withInputFun(input, num) {
+    function amountAdd(num) {
+        input.value += num
+        input.dispatchEvent(new Event("input"))
+    }
+
+    function clearAmount() {
+        input.value = ""
+        input.dispatchEvent(new Event("input"))
+    }
+
+    function enterAmount() {
+        withAmount = input.value
+        alert(`Here ${withAmount}`)
+    }
+
+    if (num === "clear") {
+        clearAmount()
+    }
+    else if (num === "enter") {
+        enterAmount()
+    }
+    else {
+        amountAdd(num)
+    }
 }
