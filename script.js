@@ -96,13 +96,14 @@ function showMenu() {
         </div>
         <div class="menu_options" id="menu_options">
             <button onclick="optBal()">Balance</button>
-            <button>Deposite</button>
+            <button onclick="optDepo()">Deposite</button>
             <button>Withdraw</button> 
             <button>Change PIN</button>
             <button>Quit</button>
     `
 }
 
+let balPinInput
 function optBal() {
     subSection.style.display = "block"
     mainSection.innerHTML = `
@@ -112,24 +113,24 @@ function optBal() {
         </div>
     `
 
-    let bal_pin_input = document.getElementById("bal_pin_input")
+    balPinInput = document.getElementById("bal_pin_input")
     subSection.innerHTML = `
         <div class="dial_pad" id="dial_pad">
-            <button onclick="pinInputFun(bal_pin_input, '1')">1</button>
-            <button onclick="pinInputFun(bal_pin_input, '2')">2</button>
-            <button onclick="pinInputFun(bal_pin_input, '3')">3</button>
+            <button onclick="pinInputFun(balPinInput, '1')">1</button>
+            <button onclick="pinInputFun(balPinInput, '2')">2</button>
+            <button onclick="pinInputFun(balPinInput, '3')">3</button>
                 
-            <button onclick="pinInputFun(bal_pin_input, '4')">4</button>
-            <button onclick="pinInputFun(bal_pin_input, '5')">5</button>
-            <button onclick="pinInputFun(bal_pin_input, '6')">6</button>
+            <button onclick="pinInputFun(balPinInput, '4')">4</button>
+            <button onclick="pinInputFun(balPinInput, '5')">5</button>
+            <button onclick="pinInputFun(balPinInput, '6')">6</button>
                 
-            <button onclick="pinInputFun(bal_pin_input, '7')">7</button>
-            <button onclick="pinInputFun(bal_pin_input, '8')">8</button>
-            <button onclick="pinInputFun(bal_pin_input, '9')">9</button>
+            <button onclick="pinInputFun(balPinInput, '7')">7</button>
+            <button onclick="pinInputFun(balPinInput, '8')">8</button>
+            <button onclick="pinInputFun(balPinInput, '9')">9</button>
                 
-            <button onclick="pinInputFun(bal_pin_input, 'clear')">Clear</button>
-            <button onclick="pinInputFun(bal_pin_input, '0')">0</button>
-            <button onclick="pinInputFun(bal_pin_input, 'check')">Check</button>
+            <button onclick="pinInputFun(balPinInput, 'clear')">Clear</button>
+            <button onclick="pinInputFun(balPinInput, '0')">0</button>
+            <button onclick="pinInputFun(balPinInput, 'check')">Check</button>
         </div>
     `
 }
@@ -149,8 +150,11 @@ function pinInputFun(Xinput, num) {
     function checkPin() {
         if (Xinput.value === PIN) {
             alert("Correct Password")
-            if (Xinput === bal_pin_input) {
-                showBal()
+            if (Xinput === balPinInput) {
+                balWindow()
+            }
+            else if (Xinput === depoPinInput) {
+                depoWindow()
             }
         }
         else {
@@ -170,7 +174,7 @@ function pinInputFun(Xinput, num) {
     }
 }
 
-function showBal() {
+function balWindow() {
     subSection.style.display = "none"
     mainSection.innerHTML = `
         <div class="bal_view" id="bal_view">
@@ -180,4 +184,109 @@ function showBal() {
             <button onclick="showMenu()">Back</button>
         </div>
     `
+}
+
+let depoPinInput
+function optDepo() {
+    subSection.style.display = "block"
+    mainSection.innerHTML = `
+        <div class="pin_text" id="pin_text">
+            <h3>Enter Your PIN</h3>
+            <input type="password" maxlength="4" readonly id="depo_pin_input">
+        </div>
+    `
+
+    depoPinInput = document.getElementById("depo_pin_input")
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="pinInputFun(depoPinInput, '1')">1</button>
+            <button onclick="pinInputFun(depoPinInput, '2')">2</button>
+            <button onclick="pinInputFun(depoPinInput, '3')">3</button>
+                
+            <button onclick="pinInputFun(depoPinInput, '4')">4</button>
+            <button onclick="pinInputFun(depoPinInput, '5')">5</button>
+            <button onclick="pinInputFun(depoPinInput, '6')">6</button>
+                
+            <button onclick="pinInputFun(depoPinInput, '7')">7</button>
+            <button onclick="pinInputFun(depoPinInput, '8')">8</button>
+            <button onclick="pinInputFun(depoPinInput, '9')">9</button>
+                
+            <button onclick="pinInputFun(depoPinInput, 'clear')">Clear</button>
+            <button onclick="pinInputFun(depoPinInput, '0')">0</button>
+            <button onclick="pinInputFun(depoPinInput, 'check')">Check</button>
+        </div>
+    `
+}
+
+let depoMoneyInput
+function depoWindow() {
+    mainSection.innerHTML = `
+        <div class="depo_view">
+            <h3>Deposit Money</h3>
+            <input type="text" readonly id="depo_money_input_el">
+            <p id="money_input_error_text">Multiple of 100</p>
+        </div>
+    ` 
+
+    depoMoneyInput = document.getElementById("depo_money_input_el")
+
+    let moneyInputErrorText = document.getElementById("money_input_error_text")
+
+    depoMoneyInput.addEventListener("input", function() {
+        let amount = Number(depoMoneyInput.value)
+
+        if (amount % 100 !== 0) {
+            moneyInputErrorText.textContent = "Amount must be a multiple of ₹100"
+        }
+        else {
+            moneyInputErrorText.textContent = ""
+        }
+    })
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="moneyInputFun(depoMoneyInput, '1')">1</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '2')">2</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '3')">3</button>
+                
+            <button onclick="moneyInputFun(depoMoneyInput, '4')">4</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '5')">5</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '6')">6</button>
+                
+            <button onclick="moneyInputFun(depoMoneyInput, '7')">7</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '8')">8</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '9')">9</button>
+                
+            <button onclick="moneyInputFun(depoMoneyInput, 'clear')">Back</button>
+            <button onclick="moneyInputFun(depoMoneyInput, '0')">0</button>
+            <button onclick="moneyInputFun(depoMoneyInput, 'enter')">Enter</button>
+        </div>
+    `
+}
+
+let depoMoney
+function moneyInputFun(moneyInput, num) {
+    function moneyAdd(num) {
+        moneyInput.value += num
+        moneyInput.dispatchEvent(new Event("input"))
+    }
+
+    function clearMoney() {
+        moneyInput.value = ""
+        moneyInput.dispatchEvent(new Event("input"))
+    }
+    
+    function enterMoney() {
+        depoMoney = moneyInput.value
+        alert(`Your deposited money ${depoMoney}`)
+    }
+
+    if (num === "clear") {
+        clearMoney()
+    }
+    else if (num === "enter") {
+        enterMoney()
+    }
+    else {
+        moneyAdd(num)
+    }
 }
