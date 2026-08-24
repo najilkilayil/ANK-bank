@@ -303,7 +303,7 @@ function depoWindowSuccess() {
             <h2>₹ ${depoMoney}</h2>
 
             <h3>Current Balance</h3>
-            <h2>₹ ${balAmount}}</h2>
+            <h2>₹ ${balAmount}</h2>
 
             <button onclick="showMenu()">Back</button>
         </div>
@@ -427,6 +427,7 @@ function withInputFun(input, num) {
     function enterAmount() {
         withAmount = input.value
         alert(`Here ${withAmount}`)
+        withdrawAmount(withAmount)
     }
 
     if (num === "clear") {
@@ -438,4 +439,48 @@ function withInputFun(input, num) {
     else {
         amountAdd(num)
     }
+}
+
+let loadProcessWindow
+
+function withdrawAmount(amount) {
+    amount = Number(amount)
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="load_process" id="load_process">
+            Processing....
+        </div>
+    `
+    loadProcessWindow = document.getElementById("load_process")
+    loadProcessWindow.style.display = "flex"
+
+    setTimeout(() => {
+        if (amount <= balAmount) {
+            balAmount -= amount
+            mainSection.innerHTML = `
+                <div class="with_view_success" id="with_view_success">
+                    <h3>Cash Withdrawn Successfully</h3>
+                    <h2>Amount : ₹ ${amount}</h2>
+
+                    <h3 id="h3_2nd">Balance</h3>
+                    <h2>₹ ${balAmount}</h2>
+
+                    <button onclick="showMenu()">Back</button>
+                </div>
+            `
+        }
+        else {
+            mainSection.innerHTML = `
+                <div class="with_view_fail" id="with_view_fail">
+                    <h3>Cash Withdraw Failied</h3>
+                    <h2>Inficient Balance</h2>
+
+                    <h3>Balance</h3>
+                    <h2>₹ ${balAmount}</h2>
+
+                    <button onclick="showMenu()">Back</button>
+                </div> 
+            `
+        }
+    }, 2000);
 }

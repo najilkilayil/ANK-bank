@@ -232,12 +232,13 @@ body {
     gap: 20px;
 }
 
-/* frame 7, frame 8, frame 9, frame 10 */
+/* frame 7, frame 8, frame 9, frame 10, frame 12, frame 13 */
 .bal_view,
 .depo_view,
 .depo_success,
 .with_view,
-.with_view_success {
+.with_view_success,
+.with_view_fail {
     margin-top: 20%;
     width: 100%;
     height: 40%;
@@ -252,14 +253,16 @@ body {
 .depo_view h3,
 .depo_success h3,
 .with_view h3,
-.with_view_success h3 {
+.with_view_success h3,
+.with_view_fail h3 {
     font-size: 26px;
     font-weight: 600;
 }
 
 .bal_view button,
 .depo_success button,
-.with_view_success button {
+.with_view_success button,
+.with_view_fail button {
     width: 20%;
     height: 15%;
     margin-top: 30px;
@@ -274,7 +277,8 @@ body {
 
 /* frame 9 */
 .depo_success h3,
-.with_view_success h3 {
+.with_view_success h3
+.with_view_fail h3 {
     margin-top: 20px;
 }
 
@@ -314,4 +318,9 @@ body {
     justify-content: center;
     font-size: 26px;
     font-weight: 700;
+}
+
+
+#h3_2nd {
+    margin-top: 40px;
 }
