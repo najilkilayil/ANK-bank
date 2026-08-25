@@ -99,7 +99,7 @@ function showMenu() {
             <button onclick="optDepo()">Deposite</button>
             <button onclick="optWith()">Withdraw</button> 
             <button onclick="optPin()">Change PIN</button>
-            <button>Quit</button>
+            <button onclick="optQuit()">Quit</button>
     `
 }
 
@@ -639,4 +639,22 @@ function changePinSuccess() {
             <button onclick="showMenu()">Back</button>
         </div>
     `
+}
+
+function optQuit() {
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="quit_load" id="quit_load">
+            Quiting....
+        </div>
+    `
+
+    setTimeout(() => {
+        mainSection.innerHTML = `
+            <div class="quit_view" id="quit_view">
+                <h3>Thank You for using</h3>
+                <h2>ANK Bank</h2>
+            </div>
+        `
+    }, 2500);
 }

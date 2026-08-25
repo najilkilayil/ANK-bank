@@ -232,7 +232,7 @@ body {
     gap: 20px;
 }
 
-/* frame 7, frame 8, frame 9, frame 10, frame 12, frame 13, frame 14, frame 16, frame 17 */
+/* frame 7, frame 8, frame 9, frame 10, frame 12, frame 13, frame 14, frame 16, frame 17, frame 18 */
 .bal_view,
 .depo_view,
 .depo_success,
@@ -241,7 +241,8 @@ body {
 .with_view_fail,
 .change_pin_view,
 .change_pin_view_success, 
-.quit_load {
+.quit_load,
+.quit_view {
     margin-top: 20%;
     width: 100%;
     height: 40%;
@@ -259,7 +260,8 @@ body {
 .with_view_success h3,
 .with_view_fail h3,
 .change_pin_view h3,
-.change_pin_view_success h3 {
+.change_pin_view_success h3,
+.quit_view h3 {
     font-size: 26px;
     font-weight: 600;
 }
@@ -348,4 +350,9 @@ body {
     padding-left: 0;
     font-size: 26px;
     font-weight: 800;
+}
+
+/* frame 18 */
+.quit_view h2 {
+    font-size: 42px;
 }
