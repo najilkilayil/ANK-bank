@@ -364,7 +364,7 @@ function withWindow() {
                <button onclick="withdrawAmount(500)">₹ 500</button>
                <button onclick="withdrawAmount(1000)">₹ 1000</button>
                     
-                <buttononclick="withdrawAmount(2000)">₹ 2000</button>
+                <button onclick="withdrawAmount(2000)">₹ 2000</button>
                 <button id="with_money_btn_other">Other</button>
             </div>
 
