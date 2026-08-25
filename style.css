@@ -232,7 +232,7 @@ body {
     gap: 20px;
 }
 
-/* frame 7, frame 8, frame 9, frame 10, frame 12, frame 13, frame 14, frame 16 */
+/* frame 7, frame 8, frame 9, frame 10, frame 12, frame 13, frame 14, frame 16, frame 17 */
 .bal_view,
 .depo_view,
 .depo_success,
@@ -240,7 +240,8 @@ body {
 .with_view_success,
 .with_view_fail,
 .change_pin_view,
-.change_pin_view_success {
+.change_pin_view_success, 
+.quit_load {
     margin-top: 20%;
     width: 100%;
     height: 40%;
@@ -336,4 +337,15 @@ body {
     height: 20px;
     width: 200px;
     margin-bottom: 20px;
+}
+
+/* frame 17 */
+.quit_load {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    font-size: 26px;
+    font-weight: 800;
 }
