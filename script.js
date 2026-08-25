@@ -61,6 +61,7 @@ fillFormSubBtn.addEventListener("click", function (event) {
         return
     }
 
+    PIN = passInput.value
     showAccSummary()
 })
 let borderMain = document.getElementById("real_main")
