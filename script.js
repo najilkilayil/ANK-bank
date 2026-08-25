@@ -42,9 +42,9 @@ function AccountNum() {
 }
 
 accInput.value = AccountNum()
-nameInput.value = "Robert John"
-passInput.value = "1111"
-conPassInput.value = "1111"
+// nameInput.value = "Robert John"
+// passInput.value = "1111"
+// conPassInput.value = "1111"
 
 
 
@@ -61,6 +61,7 @@ fillFormSubBtn.addEventListener("click", function (event) {
         return
     }
 
+    PIN = passInput.value
     showAccSummary()
 })
 let borderMain = document.getElementById("real_main")
