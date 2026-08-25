@@ -164,6 +164,7 @@ function pinInputFun(Xinput, num) {
         }
         else {
             alert("Incorrect Password")
+            Xinput.value = ""
             return
         }
     }
@@ -231,13 +232,13 @@ function depoWindow() {
             <input type="text" readonly id="depo_money_input_el">
             <p id="money_input_error_text">Multiple of 100</p>
         </div>
-    ` 
+    `
 
     depoMoneyInput = document.getElementById("depo_money_input_el")
 
     let moneyInputErrorText = document.getElementById("money_input_error_text")
 
-    depoMoneyInput.addEventListener("input", function() {
+    depoMoneyInput.addEventListener("input", function () {
         let amount = Number(depoMoneyInput.value)
 
         if (amount % 100 !== 0) {
@@ -279,7 +280,7 @@ function moneyInputFun(moneyInput, num) {
         moneyInput.value = ""
         moneyInput.dispatchEvent(new Event("input"))
     }
-    
+
     function enterMoney() {
         depoMoney = moneyInput.value
         depoWindowSuccess()
@@ -298,19 +299,22 @@ function moneyInputFun(moneyInput, num) {
 
 let balAmount = Number(balInput.value)
 function depoWindowSuccess() {
-    balAmount += Number(depoMoney)
-    subSection.style.display = "none"
-    mainSection.innerHTML = `
-        <div class="depo_success" id="depo_success">
-            <h3>Deposit Successfully</h3>
-            <h2>₹ ${depoMoney}</h2>
+    loadingWindow()
+    setTimeout(() => {
+        balAmount += Number(depoMoney)
+        subSection.style.display = "none"
+        mainSection.innerHTML = `
+            <div class="depo_success" id="depo_success">
+                <h3>Deposit Successfully</h3>
+                <h2>₹ ${depoMoney}</h2>
 
-            <h3>Current Balance</h3>
-            <h2>₹ ${balAmount}</h2>
+                <h3>Current Balance</h3>
+                <h2>₹ ${balAmount}</h2>
 
-            <button onclick="showMenu()">Back</button>
-        </div>
-    `
+                <button onclick="showMenu()">Back</button>
+            </div>
+        `
+    }, 2000);
 }
 
 let withPinInput
@@ -376,9 +380,9 @@ function withWindow() {
     withCustomInput = document.getElementById("with_money_custom_input_el")
     let withCustomErrorText = document.getElementById("with_error_text_custom")
 
-    withOtherBtn.addEventListener("click", function() {
+    withOtherBtn.addEventListener("click", function () {
         withCustomDiv.style.display = "block"
-        withCustomInput.addEventListener("input", function() {
+        withCustomInput.addEventListener("input", function () {
             let amount = Number(withCustomInput.value)
 
             if (amount % 100 !== 0) {
@@ -448,12 +452,7 @@ let loadProcessWindow
 
 function withdrawAmount(amount) {
     amount = Number(amount)
-    subSection.style.display = "none"
-    mainSection.innerHTML = `
-        <div class="load_process" id="load_process">
-            Processing....
-        </div>
-    `
+    loadingWindow()
     loadProcessWindow = document.getElementById("load_process")
     loadProcessWindow.style.display = "flex"
 
@@ -592,7 +591,7 @@ function changePinInputFun(num) {
             return
         }
 
-        if ( changePinInputEl.value !== changeConPInInputEl.value) {
+        if (changePinInputEl.value !== changeConPInInputEl.value) {
             alert("PIN are not matching!")
             changeConPInInputEl.value = ""
             return
@@ -611,7 +610,7 @@ function updatePIN() {
         alert("Enter a 4 digit new PIN!")
         return
     }
-    
+
     if (changeConPInInputEl.value.length !== 4) {
         alert("Enter the confirm PIN!")
         return
@@ -631,14 +630,18 @@ function updatePIN() {
 }
 
 function changePinSuccess() {
-    subSection.style.display = "none"
-    mainSection.innerHTML = `
-        <div class="change_pin_view_success" id="change_pin_view_success">
-            <h3>Successfully Updated</h3>
-
-            <button onclick="showMenu()">Back</button>
-        </div>
-    `
+    loadingWindow()
+    
+    setTimeout(() => {
+        subSection.style.display = "none"
+        mainSection.innerHTML = `
+            <div class="change_pin_view_success" id="change_pin_view_success">
+                <h3>Successfully Updated</h3>
+    
+                <button onclick="showMenu()">Back</button>
+            </div>
+        `
+    }, 2000);
 }
 
 function optQuit() {
@@ -657,4 +660,13 @@ function optQuit() {
             </div>
         `
     }, 2500);
+}
+
+function loadingWindow() {
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="load_process" id="load_process">
+            Processing....
+        </div>
+    `
 }
