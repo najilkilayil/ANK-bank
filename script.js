@@ -602,7 +602,7 @@ function changePinInputFun(num) {
         PIN = changedPIN
         alert("PIN changed successfully!")
         subSection.style.display = "none"
-        showMenu()
+        changePinSuccess()
     }
 }
 
@@ -627,5 +627,16 @@ function updatePIN() {
     PIN = changedPIN
     alert("PIN changed successfully!")
     subSection.style.display = "none"
-    showMenu()
+    changePinSuccess()
+}
+
+function changePinSuccess() {
+    subSection.style.display = "none"
+    mainSection.innerHTML = `
+        <div class="change_pin_view_success" id="change_pin_view_success">
+            <h3>Successfully Updated</h3>
+
+            <button onclick="showMenu()">Back</button>
+        </div>
+    `
 }
