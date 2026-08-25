@@ -98,7 +98,7 @@ function showMenu() {
             <button onclick="optBal()">Balance</button>
             <button onclick="optDepo()">Deposite</button>
             <button onclick="optWith()">Withdraw</button> 
-            <button>Change PIN</button>
+            <button onclick="optPin()">Change PIN</button>
             <button>Quit</button>
     `
 }
@@ -157,6 +157,9 @@ function pinInputFun(Xinput, num) {
             }
             else if (Xinput === withPinInput) {
                 withWindow()
+            }
+            else if (Xinput === pinChangePin) {
+                changePinWindow()
             }
         }
         else {
@@ -483,4 +486,146 @@ function withdrawAmount(amount) {
             `
         }
     }, 2000);
+}
+
+let pinChangePin
+
+function optPin() {
+    subSection.style.display = "block"
+
+    mainSection.innerHTML = `
+        <div class="pin_text" id="pin_text">
+            <h3>Enter Your PIN</h3>
+            <input type="password" id="pin_pin_input" maxlength="4" readonly>
+        </div>
+    `
+
+    pinChangePin = document.getElementById("pin_pin_input")
+
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="pinInputFun(pinChangePin, '1')">1</button>
+            <button onclick="pinInputFun(pinChangePin, '2')">2</button>
+            <button onclick="pinInputFun(pinChangePin, '3')">3</button>
+                
+            <button onclick="pinInputFun(pinChangePin, '4')">4</button>
+            <button onclick="pinInputFun(pinChangePin, '5')">5</button>
+            <button onclick="pinInputFun(pinChangePin, '6')">6</button>
+                
+            <button onclick="pinInputFun(pinChangePin, '7')">7</button>
+            <button onclick="pinInputFun(pinChangePin, '8')">8</button>
+            <button onclick="pinInputFun(pinChangePin, '9')">9</button>
+                
+            <button onclick="pinInputFun(pinChangePin, 'clear')">Clear</button>
+            <button onclick="pinInputFun(pinChangePin, '0')">0</button>
+            <button onclick="pinInputFun(pinChangePin, 'check')">Check</button>
+        </div>
+    `
+}
+
+let changePinInputEl
+let changeConPInInputEl
+let changedPIN
+
+function changePinWindow() {
+    mainSection.innerHTML = `
+        <div class="change_pin_view" id="change_pin_view">
+            <h3>Enter new security PIN</h3>
+            <input type="password" id="change_pin_input" maxlength="4">
+
+            <h3>Conform</h3>
+            <input type="text" id="change_con_pin_input">
+
+            <button onclick="updatePIN()">Update PIN</button>
+        </div>
+    `
+
+    changePinInputEl = document.getElementById("change_pin_input")
+    changeConPInInputEl = document.getElementById("change_con_pin_input")
+
+    subSection.style.display = "block"
+    subSection.innerHTML = `
+        <div class="dial_pad" id="dial_pad">
+            <button onclick="changePinInputFun('1')">1</button>
+            <button onclick="changePinInputFun('2')">2</button>
+            <button onclick="changePinInputFun('3')">3</button>
+                
+            <button onclick="changePinInputFun('4')">4</button>
+            <button onclick="changePinInputFun('5')">5</button>
+            <button onclick="changePinInputFun('6')">6</button>
+                
+            <button onclick="changePinInputFun('7')">7</button>
+            <button onclick="changePinInputFun('8')">8</button>
+            <button onclick="changePinInputFun('9')">9</button>
+                
+            <button onclick="changePinInputFun('clear')">Clear</button>
+            <button onclick="changePinInputFun('0')">0</button>
+            <button onclick="changePinInputFun('enter')">Enter</button>
+        </div>
+    `
+}
+
+function changePinInputFun(num) {
+    if (num !== "clear" && num !== "enter") {
+        if (changePinInputEl.value.length < 4) {
+            changePinInputEl.value += num
+        }
+        else if (changeConPInInputEl.value.length < 4) {
+            changeConPInInputEl.value += num
+        }
+        return
+    }
+
+    if (num === "clear") {
+        if (changeConPInInputEl.value.length > 0) {
+            changeConPInInputEl.value = ""
+        }
+        else {
+            changePinInputEl.value = ""
+        }
+        return
+    }
+
+    if (num === "enter") {
+        if (changePinInputEl.value.length !== 4) {
+            alert("Enter the confirm PIN!")
+            return
+        }
+
+        if ( changePinInputEl.value !== changeConPInInputEl.value) {
+            alert("PIN are not matching!")
+            changeConPInInputEl.value = ""
+            return
+        }
+
+        changedPIN = changePinInputEl.value
+        PIN = changedPIN
+        alert("PIN changed successfully!")
+        subSection.style.display = "none"
+        showMenu()
+    }
+}
+
+function updatePIN() {
+    if (changePinInputEl.value.length !== 4) {
+        alert("Enter a 4 digit new PIN!")
+        return
+    }
+    
+    if (changeConPInInputEl.value.length !== 4) {
+        alert("Enter the confirm PIN!")
+        return
+    }
+
+    if (changePinInputEl !== changePinInputEl) {
+        alert("PIN are not matching")
+        changeConPInInputEl.value = ""
+        return
+    }
+
+    changedPIN = changePinInputEl.value
+    PIN = changedPIN
+    alert("PIN changed successfully!")
+    subSection.style.display = "none"
+    showMenu()
 }
