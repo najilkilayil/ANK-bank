@@ -10,6 +10,35 @@ let passInput = document.getElementById("form_pin")
 let conPassInput = document.getElementById("form_pin_con")
 let fillFormSubBtn = document.getElementById("form_submit_btn")
 
+let accInput = document.getElementById("form_acc_number")
+
+let borderMain = document.getElementById("real_main")
+let mainSection = document.getElementById("main_section")
+let subSection = document.getElementById("sub_section")
+let welcomeTextHead = document.getElementById("welcome_text")
+let menuOptionsDiv = document.getElementById("menu_options")
+let accSummaryView = document.getElementById("acc_sum_view")
+
+let balPinInput
+let PIN = passInput.value
+
+let depoPinInput
+let depoMoneyInput
+let depoMoney
+
+let balAmount = Number(balInput.value)
+
+let withPinInput
+let withCustomInput
+let withAmount
+
+let loadProcessWindow
+
+let pinChangePin
+let changePinInputEl
+let changeConPInInputEl
+let changedPIN
+
 welcomeLoad()
 
 function welcomeLoad() {
@@ -32,7 +61,7 @@ function welcomeLoad() {
     }, 2000);
 }
 
-let accInput = document.getElementById("form_acc_number")
+
 
 function AccountNum() {
     let digit1 = Math.floor(1000 + Math.random() * 20)
@@ -64,12 +93,7 @@ fillFormSubBtn.addEventListener("click", function (event) {
     PIN = passInput.value
     showAccSummary()
 })
-let borderMain = document.getElementById("real_main")
-let mainSection = document.getElementById("main_section")
-let subSection = document.getElementById("sub_section")
-let welcomeTextHead = document.getElementById("welcome_text")
-let menuOptionsDiv = document.getElementById("menu_options")
-let accSummaryView = document.getElementById("acc_sum_view")
+
 function showAccSummary() {
     fillFormMain.style.display = "none"
     accSummaryView.style.display = "flex"
@@ -104,7 +128,6 @@ function showMenu() {
     `
 }
 
-let balPinInput
 function optBal() {
     subSection.style.display = "block"
     mainSection.innerHTML = `
@@ -136,7 +159,6 @@ function optBal() {
     `
 }
 
-let PIN = passInput.value
 function pinInputFun(Xinput, num) {
     function pinNum(num) {
         if (Xinput.value.length < 4) {
@@ -193,7 +215,6 @@ function balWindow() {
     `
 }
 
-let depoPinInput
 function optDepo() {
     subSection.style.display = "block"
     mainSection.innerHTML = `
@@ -225,7 +246,6 @@ function optDepo() {
     `
 }
 
-let depoMoneyInput
 function depoWindow() {
     mainSection.innerHTML = `
         <div class="depo_view">
@@ -270,7 +290,6 @@ function depoWindow() {
     `
 }
 
-let depoMoney
 function moneyInputFun(moneyInput, num) {
     function moneyAdd(num) {
         moneyInput.value += num
@@ -298,7 +317,6 @@ function moneyInputFun(moneyInput, num) {
     }
 }
 
-let balAmount = Number(balInput.value)
 function depoWindowSuccess() {
     loadingWindow()
     setTimeout(() => {
@@ -318,7 +336,6 @@ function depoWindowSuccess() {
     }, 2000);
 }
 
-let withPinInput
 function optWith() {
     subSection.style.display = "block"
     mainSection.innerHTML = `
@@ -350,7 +367,6 @@ function optWith() {
     `
 }
 
-let withCustomInput
 function withWindow() {
     subSection.style.display = "none"
     mainSection.innerHTML = `
@@ -420,7 +436,6 @@ function customAmountWindow() {
     `
 }
 
-let withAmount
 function withInputFun(input, num) {
     function amountAdd(num) {
         input.value += num
@@ -448,8 +463,6 @@ function withInputFun(input, num) {
         amountAdd(num)
     }
 }
-
-let loadProcessWindow
 
 function withdrawAmount(amount) {
     amount = Number(amount)
@@ -488,8 +501,6 @@ function withdrawAmount(amount) {
     }, 2000);
 }
 
-let pinChangePin
-
 function optPin() {
     subSection.style.display = "block"
 
@@ -522,10 +533,6 @@ function optPin() {
         </div>
     `
 }
-
-let changePinInputEl
-let changeConPInInputEl
-let changedPIN
 
 function changePinWindow() {
     mainSection.innerHTML = `
