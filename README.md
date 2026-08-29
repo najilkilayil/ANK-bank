@@ -81,6 +81,11 @@ So created and coded of the basics and order of the frame then conneccted every 
 | frame 17 | Quiting loading screen (2.5 second) |
 | frame 18 | Thanking window and this is the last frame |  
 
+## Ai Usage
 
+- Asked help to understand the clear logic and to solve some bugs.
+- For getting Random account number between the two ranges!
+- moneyInputFun(moneyInput, num) :- used here for understanding the logic.
+- accessing the focus at two inputs in changePIN windows.
 
 ----
