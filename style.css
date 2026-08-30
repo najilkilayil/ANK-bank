@@ -82,6 +82,7 @@ body {
     position: absolute;
     display: none;
     color: rgb(160, 160, 160);
+    text-transform: uppercase;
 }
 
 .welcome_div h1 {
@@ -125,12 +126,15 @@ body {
 
 /* frame 3 */
 .form_main {
-    background-color: red;
+    background-color: #0D1422;
     width: 60%;
     height: 80%;
     flex-direction: column;
+    padding-left: 200px;
     align-items: start;
     display: none;
+    border-radius: 20px;
+    border: 1px solid #0D1422;
 }
 
 .form_main input {
@@ -139,12 +143,28 @@ body {
     border-radius: 16px;
     border: none;
     margin-bottom: 20px;
+    background-color: #101c32;
+    color: #F8FAFC;
+    border: 1px solid #24324A;
+}
+
+.form_main input:focus {
+    border: 1px solid #2F81F7;
+}
+
+.form_main input:disabled {
+    background-color: #111A2B;
 }
 
 .form_main button {
-    width: 100px;
+    width: 200px;
     height: 50px;
+    border-radius: 16px;
     margin-top: 30px;
+    margin-left: 40px;
+    background-color: #2F81F7;
+    color: #ffff;
+    border: 1px solid white;
 }
 
 /* frame 4 */
