@@ -99,7 +99,7 @@ function showAccSummary() {
     accSummaryView.style.display = "flex"
     accSummaryView.innerHTML = `
         <h2>Account Created Successfully</h2>
-        <p>Account Name : ${nameInput.value}</p>
+        <p>Account Holder <br> ${nameInput.value}</p>
         <p>Account No. : ${accInput.value}</p>
         <p>PIN : ${passInput.value}</p>
         <h3>Please rember your account no.</h3>

@@ -5,14 +5,21 @@
     user-select: none;
 }
 
+:root {
+    --main-bg: #070B14;
+    --bg: #0D1422;
+    --bg-card: #192235;
+}
+
 body {
-    background-color: #070B14;
+    background-color: var(--main-bg);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     color: #2F81F7;
+    font-family: "Inter", sans-serif;
 }
 
 /* frame 1 */
@@ -77,6 +84,7 @@ body {
 
 /* frame 2 */
 .welcome_div {
+    font-weight: 700;
     width: 200px;
     height: 50px;
     position: absolute;
@@ -86,8 +94,8 @@ body {
 }
 
 .welcome_div h1 {
-    font-family: monospace;
-    width: 8ch;
+    font-family: "Space Grotesk", sans-serif;
+    width: 10ch;
     text-wrap: nowrap;
     overflow: hidden;
     font-size: 56px;
@@ -95,7 +103,6 @@ body {
 }
 
 .welcome_div h3 {
-    font-family: monospace;
     width: 13ch;
     text-wrap: nowrap;
     overflow: hidden;
@@ -126,15 +133,16 @@ body {
 
 /* frame 3 */
 .form_main {
-    background-color: #0D1422;
+    background-color: var(--bg);
     width: 60%;
     height: 80%;
     flex-direction: column;
-    padding-left: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
     align-items: start;
     display: none;
     border-radius: 20px;
-    border: 1px solid #0D1422;
+    border: 1px solid var(--bg);
 }
 
 .form_main input {
@@ -169,25 +177,85 @@ body {
 
 /* frame 4 */
 .acc_sum_view {
-    background-color: yellow;
-    width: 60%;
-    height: 50%;
+    background-color: var(--bg);
+    width: 40%;
+    height: 70%;
     flex-direction: column;
     align-items: start;
     justify-content: center;
     display: none;
+    border-radius: 16px;
+    border: 1px solid #24324A;
+}
+
+.acc_sum_view div {
+    background-color: #22C55E;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 600;
+    border-radius: 56px;
+    margin-left: 20%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: black;
 }
 
 .acc_sum_view h2,
-.acc_sum_view p,
 .acc_sum_view h3 {
     padding-left: 10%;
+}
+
+.acc_sum_view h2 {
+    color: #F8FAFC;
+}
+
+.acc_sum_view span {
+    color: #22C55E;
+}
+
+.acc_sum_view p {
+    color: #A7B0C0;
+}
+
+.acc_sum_view_subsection {
+    margin-left: 10%;
+    margin-top: 20px;
+    width: 300px;
+    height: 80px;
+    padding-left: 20px;
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#acc_sum_view_subsection1 {
+    margin-top: 30px;
+}
+
+#acc_sum_view_subsection2 {
+    margin-bottom: 20px;
+}
+
+#psub {
+    padding-left: 10%;
+}
+
+#acc_sum_view_subsection2 p {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 /* frame 5 */
 .real_main {
     /* background-color: blue; */
-    background-color: #0D1422;
+    background-color: var(--bg);
     width: 80%;
     height: 80%;
     /* display: flex; */

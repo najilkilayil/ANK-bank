@@ -8,10 +8,18 @@
 </head>
 <body>
     <section class="acc_sum_view" id="acc_sum_view" style="display: flex;">
-        <h2>Account Created Successfully</h2>
-        <p>Account Name : ${nameInput.value}</p>
-        <p>Account No. : ${accInput.value}</p>
-        <p>PIN : ${passInput.value}</p>
+        <div>✓</div>
+        <h2>Account Created <br> <span> Successfully </span></h2>
+        <p id="psub">Your ANK Bank account is ready</p>
+
+        <section class="acc_sum_view_subsection" id="acc_sum_view_subsection1">
+            <h5>ACCOUNT HOLDER</h5>
+            <p>${nameInput.value}</p>
+        </section>
+        <section class="acc_sum_view_subsection" id="acc_sum_view_subsection2">
+            <h5>ACCOUNT NUMBER</h5>
+            <p>ANK-1234-5678</p>
+        </section>
         <h3>Please rember your account no.</h3>
     </section>
 </body>
