@@ -56,7 +56,7 @@ function welcomeLoad() {
             fillFormMain.style.display = "flex"
             setTimeout(() => {
                 welcomeMain.style.display = "none"
-            }, 2000);
+            }, 500);
         }, 4000);
     }, 2000);
 }
@@ -95,21 +95,41 @@ fillFormSubBtn.addEventListener("click", function (event) {
 })
 
 function showAccSummary() {
-    fillFormMain.style.display = "none"
-    accSummaryView.style.display = "flex"
+    // fillFormMain.id = "move_left_anim"
+    // accSummaryView.id = "move_right_anim"
+    // accSummaryView.style.display = "flex"
+    // fillFormMain.id = "move_left_anim"
+    // setTimeout(() => {
+    //     fillFormMain.style.display = "none"
+    // }, 2500);
     accSummaryView.innerHTML = `
-        <h2>Account Created Successfully</h2>
-        <p>Account Holder <br> ${nameInput.value}</p>
-        <p>Account No. : ${accInput.value}</p>
-        <p>PIN : ${passInput.value}</p>
+        <div>✓</div>
+        <h2>Account Created <br> <span> Successfully </span></h2>
+        <p id="psub">Your ANK Bank account is ready</p>
+
+        <section class="acc_sum_view_subsection" id="acc_sum_view_subsection1">
+            <h5>ACCOUNT HOLDER</h5>
+            <p>${nameInput.value}</p>
+        </section>
+        <section class="acc_sum_view_subsection" id="acc_sum_view_subsection2">
+            <h5>ACCOUNT NUMBER</h5>
+            <p>${accInput.value}</p>
+        </section>
         <h3>Please rember your account no.</h3>
     `
 
+    accSummaryView.style.display = "flex"
+    accSummaryView.id = "move_right_anim"
+
+    fillFormMain.id = "move_left_anim"
+    setTimeout(() => {
+        fillFormMain.style.display = "none"
+    }, 2500);
     setTimeout(() => {
         accSummaryView.style.display = "none"
         borderMain.style.display = "flex"
         showMenu()
-    }, 3000);
+    }, 4500);
 }
 
 function showMenu() {

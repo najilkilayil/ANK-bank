@@ -9,6 +9,8 @@
     --main-bg: #070B14;
     --bg: #0D1422;
     --bg-card: #192235;
+    --text-color : #2F81F7;
+    --big-text: rgb(160, 160, 160);
 }
 
 body {
@@ -18,7 +20,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    color: #2F81F7;
+    color: var(--text-color);
     font-family: "Inter", sans-serif;
 }
 
@@ -33,7 +35,7 @@ body {
 }
 
 .loading_main_text {
-    color: rgb(160, 160, 160);
+    color: var(--big-text);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     font-size: 23px;
@@ -69,16 +71,18 @@ body {
 }
 
 #move_left_anim {
-    animation: moveLeft 3s;
+    animation: moveLeft 1.2s ease-in-out forwards;
 }
 
 @keyframes moveLeft {
     0% {
         transform: translateX(0);
+        opacity: 1;
     }
 
     100% {
         transform: translateX(100%);
+        opacity: 0;
     }
 }
 
@@ -89,7 +93,7 @@ body {
     height: 50px;
     position: absolute;
     display: none;
-    color: rgb(160, 160, 160);
+    color: var(--big-text);
     text-transform: uppercase;
 }
 
@@ -108,7 +112,7 @@ body {
     overflow: hidden;
     font-size: 26px;
     text-align: center;
-    animation: typing 2s steps(13) alternate;
+    animation: typing 1.5s steps(13) alternate;
 }
 
 @keyframes typing {
@@ -118,16 +122,18 @@ body {
 }
 
 #move_right_anim {
-    animation: moveRight 3s;
+    animation: moveRight 1.2s ease-in-out forwards;
 }
 
 @keyframes moveRight {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(100vw);
+        opacity: 0;
     }
 
     100% {
         transform: translateX(0);
+        opacity: 1;
     }
 }
 
@@ -170,13 +176,14 @@ body {
     border-radius: 16px;
     margin-top: 30px;
     margin-left: 40px;
-    background-color: #2F81F7;
+    background-color: var(--text-color);
     color: #ffff;
     border: 1px solid white;
 }
 
 /* frame 4 */
 .acc_sum_view {
+    position: absolute;
     background-color: var(--bg);
     width: 40%;
     height: 70%;
