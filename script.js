@@ -124,10 +124,14 @@ function showAccSummary() {
     fillFormMain.id = "move_left_anim"
     setTimeout(() => {
         fillFormMain.style.display = "none"
-    }, 2500);
+    }, 1500);
     setTimeout(() => {
-        accSummaryView.style.display = "none"
+        accSummaryView.id = "move_left_anim"
+            setTimeout(() => {
+                accSummaryView.style.display = "none"
+            }, 1200);
         borderMain.style.display = "flex"
+        borderMain.id = "move_right_anim"
         showMenu()
     }, 4500);
 }
@@ -136,15 +140,20 @@ function showMenu() {
     subSection.style.display = "none"
     mainSection.innerHTML = `
         <div class="welcome_text" id="welcome_text">
-            <h1>Welcome, ${nameInput.value}</h1>
+            <h1>Welcome Back,</h1>
+            <h1 id="real_main_name">${nameInput.value}</h1>
             <h3>${accInput.value}</h3>
+
+            <p>What would you like to do?</p>
         </div>
+
         <div class="menu_options" id="menu_options">
-            <button onclick="optBal()">Balance</button>
-            <button onclick="optDepo()">Deposite</button>
-            <button onclick="optWith()">Withdraw</button> 
+            <button onclick="optBal()">Check Balance</button>
+            <button onclick="optDepo()">Deposit Money</button>
+            <button onclick="optWith()">Withdraw Money</button>
             <button onclick="optPin()">Change PIN</button>
-            <button onclick="optQuit()">Quit</button>
+            <button onclick="optQuit()">Exit</button>
+        </div>
     `
 }
 
