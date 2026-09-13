@@ -162,9 +162,11 @@ function optBal() {
     mainSection.innerHTML = `
         <div class="pin_text" id="pin_text">
             <h3>Enter Your PIN</h3>
+            <p>Enter your 4-digit PIN</p>
             <input type="password" id="bal_pin_input" maxlength="4" readonly>
         </div>
     `
+
 
     balPinInput = document.getElementById("bal_pin_input")
     subSection.innerHTML = `
@@ -183,7 +185,7 @@ function optBal() {
                 
             <button onclick="pinInputFun(balPinInput, 'clear')">Clear</button>
             <button onclick="pinInputFun(balPinInput, '0')">0</button>
-            <button onclick="pinInputFun(balPinInput, 'check')">Check</button>
+            <button id="check_btn" onclick="pinInputFun(balPinInput, 'check')">Check</button>
         </div>
     `
 }
@@ -193,10 +195,16 @@ function pinInputFun(Xinput, num) {
         if (Xinput.value.length < 4) {
             Xinput.value += num
         }
+        else {
+            document.getElementById("check_btn").style.background = "#131c30"
+            document.getElementById("check_btn").style.border = "1px solid #2F81F7"
+        }
     }
 
     function clearPin() {
         Xinput.value = ""
+        document.getElementById("check_btn").style.background = "#0D1422"
+        document.getElementById("check_btn").style.border = "1px solid #24324A"
     }
 
     function checkPin() {
@@ -215,9 +223,11 @@ function pinInputFun(Xinput, num) {
             }
         }
         else {
-            alert("Incorrect Password")
-            Xinput.value = ""
-            return
+            Xinput.style.color = "#EF4444"
+            setTimeout(() => {
+                Xinput.value = ""
+                return
+            }, 2000);
         }
     }
 
@@ -249,6 +259,7 @@ function optDepo() {
     mainSection.innerHTML = `
         <div class="pin_text" id="pin_text">
             <h3>Enter Your PIN</h3>
+            <p>Enter your 4-digit PIN</p>
             <input type="password" maxlength="4" readonly id="depo_pin_input">
         </div>
     `
@@ -270,7 +281,7 @@ function optDepo() {
                 
             <button onclick="pinInputFun(depoPinInput, 'clear')">Clear</button>
             <button onclick="pinInputFun(depoPinInput, '0')">0</button>
-            <button onclick="pinInputFun(depoPinInput, 'check')">Check</button>
+            <button id="check_btn" onclick="pinInputFun(depoPinInput, 'check')">Check</button>
         </div>
     `
 }
@@ -370,6 +381,7 @@ function optWith() {
     mainSection.innerHTML = `
         <div class="pin_text" id="pin_text">
             <h3>Enter Your PIN</h3>
+            <p>Enter your 4-digit PIN</p>
             <input type="password" id="with_pin_input" maxlength="4" readonly>
         </div>
     `
@@ -391,7 +403,7 @@ function optWith() {
                 
             <button onclick="pinInputFun(withPinInput, 'clear')">Clear</button>
             <button onclick="pinInputFun(withPinInput, '0')">0</button>
-            <button onclick="pinInputFun(withPinInput, 'check')">Check</button>
+            <button id="check_btn" onclick="pinInputFun(withPinInput, 'check')">Check</button>
         </div>
     `
 }
@@ -536,6 +548,7 @@ function optPin() {
     mainSection.innerHTML = `
         <div class="pin_text" id="pin_text">
             <h3>Enter Your PIN</h3>
+            <p>Enter your 4-digit PIN</p>
             <input type="password" id="pin_pin_input" maxlength="4" readonly>
         </div>
     `
@@ -558,7 +571,7 @@ function optPin() {
                 
             <button onclick="pinInputFun(pinChangePin, 'clear')">Clear</button>
             <button onclick="pinInputFun(pinChangePin, '0')">0</button>
-            <button onclick="pinInputFun(pinChangePin, 'check')">Check</button>
+            <button id="check_btn" onclick="pinInputFun(pinChangePin, 'check')">Check</button>
         </div>
     `
 }
