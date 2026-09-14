@@ -127,9 +127,9 @@ function showAccSummary() {
     }, 1500);
     setTimeout(() => {
         accSummaryView.id = "move_left_anim"
-            setTimeout(() => {
-                accSummaryView.style.display = "none"
-            }, 1200);
+        setTimeout(() => {
+            accSummaryView.style.display = "none"
+        }, 1200);
         borderMain.style.display = "flex"
         borderMain.id = "move_right_anim"
         showMenu()
@@ -211,19 +211,29 @@ function pinInputFun(Xinput, num) {
         if (Xinput.value === PIN) {
             if (Xinput === balPinInput) {
                 balWindow()
+                document.getElementById("check_btn").style.background = "#0D1422"
+                document.getElementById("check_btn").style.border = "1px solid #24324A"
             }
             else if (Xinput === depoPinInput) {
                 depoWindow()
+                document.getElementById("check_btn").style.background = "#0D1422"
+                document.getElementById("check_btn").style.border = "1px solid #24324A"
             }
             else if (Xinput === withPinInput) {
                 withWindow()
+                document.getElementById("check_btn").style.background = "#0D1422"
+                document.getElementById("check_btn").style.border = "1px solid #24324A"
             }
             else if (Xinput === pinChangePin) {
                 changePinWindow()
+                document.getElementById("check_btn").style.background = "#0D1422"
+                document.getElementById("check_btn").style.border = "1px solid #24324A"
             }
         }
         else {
             Xinput.style.color = "#EF4444"
+            document.getElementById("check_btn").style.background = "#0D1422"
+            document.getElementById("check_btn").style.border = "1px solid #24324A"
             setTimeout(() => {
                 Xinput.value = ""
                 return
@@ -248,8 +258,9 @@ function balWindow() {
         <div class="bal_view" id="bal_view">
             <h3>Available Balance</h3>
             <h2>₹ ${balAmount}</h2>
+            <p>Your current account balance</p>
 
-            <button onclick="showMenu()">Back</button>
+            <button onclick="showMenu()">Back to Menu</button>
         </div>
     `
 }
@@ -681,7 +692,7 @@ function updatePIN() {
 
 function changePinSuccess() {
     loadingWindow()
-    
+
     setTimeout(() => {
         subSection.style.display = "none"
         mainSection.innerHTML = `

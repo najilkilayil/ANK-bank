@@ -476,11 +476,23 @@ animation: status_show 1.2s;}
 .change_pin_view h3,
 .change_pin_view_success h3,
 .quit_view h3 {
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 600;
+    color: #A7B0C0;
+    letter-spacing: 1px;
 }
 
-.bal_view button,
+.bal_view h2 {
+    font-size: 36px;
+    color: #F8FAFC;
+}
+
+.bal_view p {
+    font-size: 14px;
+    color: #A7B0C0;
+}
+
+
 .depo_success button,
 .with_view_success button,
 .with_view_fail button,
@@ -491,6 +503,24 @@ animation: status_show 1.2s;}
     margin-top: 30px;
     font-size: 14px;
     font-weight: 600;
+}
+
+.bal_view button {
+    background: #0D1422;
+    color: #F8FAFC;
+    height: 50px;
+    width: 40%;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 40px;
+    border: none;
+    border: 1px solid #24324A;
+}
+
+.bal_view button:hover , .bal_view button:active {
+    background: #131c30;
+    border: 1px solid #2F81F7;
+    transform: translateY(-2px);
 }
 
 /* frame 8 */
