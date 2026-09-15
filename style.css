@@ -468,7 +468,6 @@ animation: status_show 1.2s;}
 }
 
 .bal_view h3,
-.depo_view h3,
 .depo_success h3,
 .with_view h3,
 .with_view_success h3,
@@ -526,6 +525,26 @@ animation: status_show 1.2s;}
 /* frame 8 */
 .depo_view input {
     margin-top: 5%;
+    width: 70%;
+    height: 60px;
+    background-color: #0A101C;
+    border: 1px solid #24324A;
+    color: #F8FAFC;
+    font-family: monospace;
+    font-size: 28px;
+    text-align: center;
+}
+
+.depo_view h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #F8FAFC;
+}
+
+#money_input_error_text {
+    font-size: 14px;
+    color: #A7B0C0;
+    margin-top: 10px;
 }
 
 /* frame 9 */
