@@ -375,13 +375,13 @@ function depoWindowSuccess() {
         subSection.style.display = "none"
         mainSection.innerHTML = `
             <div class="depo_success" id="depo_success">
-                <h3>Deposit Successfully</h3>
-                <h2>₹ ${depoMoney}</h2>
+                <h3 id="depo_success_main_head">Deposit Successfully</h3>
+                <h2 id="depo_success_deposited_money">₹ ${depoMoney}</h2>
 
-                <h3>Current Balance</h3>
-                <h2>₹ ${balAmount}</h2>
+                <h3 id="depo_success_sub_head">Current Balance</h3>
+                <h2 id="depo_success_bal_money">₹ ${balAmount}</h2>
 
-                <button onclick="showMenu()">Back</button>
+                <button onclick="showMenu()">Back to Menu</button>
             </div>
         `
     }, 2000);

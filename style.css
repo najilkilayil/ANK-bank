@@ -468,7 +468,6 @@ animation: status_show 1.2s;}
 }
 
 .bal_view h3,
-.depo_success h3,
 .with_view h3,
 .with_view_success h3,
 .with_view_fail h3,
@@ -548,6 +547,54 @@ animation: status_show 1.2s;}
 }
 
 /* frame 9 */
+.depo_success {
+    height: auto;
+}
+#depo_success_main_head {
+    font-size: 26px;
+    font-weight: 700;
+    color: #22C55E;
+}
+
+#depo_success_deposited_money {
+    font-size: 34px;
+    font-weight: 700;
+    color: #F8FAFC;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#depo_success_sub_head {
+    font-size: 14px;
+    font-weight: 600;
+    color: #A7B0C0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#depo_success_bal_money {
+    font-size: 28px;
+    color: #22D3EE;
+    font-weight: 700;
+}
+
+.depo_success button {
+    height: 50px;
+    width: 40%;
+    background: #0D1422;
+    color: #F8FAFC;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid #24324A;
+}
+
+.depo_success button:hover, .depo_success button:active {
+    background: #131c30;
+    border: 1px solid #2F81F7;
+    transform: translateY(-2px);
+}
+
 .depo_success h3,
 .with_view_success h3
 .with_view_fail h3 {
