@@ -474,7 +474,6 @@ body {
 }
 
 .bal_view h3,
-.change_pin_view h3,
 .change_pin_view_success h3,
 .quit_view h3 {
     font-size: 14px;
@@ -790,10 +789,73 @@ body {
 }
 
 /* frame 14 */
+.change_pin_view {
+    height: auto;
+}
+
+#change_pin_view_main_head {
+    font-size: 22px;
+    font-weight: 600;
+    color: #F8FAFC;
+    margin-bottom: 10px;
+}
+
+#change_pin_input {
+    width: 70%;
+    height: 56px;
+    background: #0A101C;
+    border: 1px solid #24324A;
+    font-size: 28px;
+    text-align: center;
+    font-family: monospace;
+    color: #F8FAFC;
+    letter-spacing: 6px;
+}
+
+#change_pin_input:focus, #change_con_pin_input:focus {
+    outline: none;
+    border: 1px solid #2F81F7;
+}
+
+#change_pin_view_sub_head {
+    font-size: 22px;
+    font-weight: 600;
+    color: #F8FAFC;
+    margin-bottom: 20px;
+}
+
+#change_con_pin_input {
+    width: 70%;
+    height: 56px;
+    background: #0A101C;
+    border: 1px solid #24324A;
+    font-size: 28px;
+    font-family: monospace;
+    letter-spacing: 6px;
+    text-align: center;
+    color: #F8FAFC;
+}
+
 .change_pin_view input {
     height: 20px;
     width: 200px;
     margin-bottom: 20px;
+}
+
+.change_pin_view button {
+    height: 50px;
+    width: 40%;
+    background: #0D1422;
+    color: #F8FAFC;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #24324A;
+}
+
+.change_pin_view button:hover, .change_pin_view button:active {
+    background: #131c30;
+    border: 1px solid #2F81F7;
+    transform: translateY(-2px);
 }
 
 /* frame 17 */

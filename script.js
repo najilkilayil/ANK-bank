@@ -590,10 +590,10 @@ function optPin() {
 function changePinWindow() {
     mainSection.innerHTML = `
         <div class="change_pin_view" id="change_pin_view">
-            <h3>Enter new security PIN</h3>
+            <h3 id="change_pin_view_main_head">Enter new security PIN</h3>
             <input type="password" id="change_pin_input" maxlength="4">
 
-            <h3>Conform</h3>
+            <h3 id="change_pin_view_sub_head">Conform</h3>
             <input type="text" id="change_con_pin_input">
 
             <button onclick="updatePIN()">Update PIN</button>
