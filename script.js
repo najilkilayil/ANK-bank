@@ -502,7 +502,6 @@ function withInputFun(input, num) {
 
     function enterAmount() {
         withAmount = input.value
-        alert(`Here ${withAmount}`)
         withdrawAmount(withAmount)
     }
 
@@ -541,13 +540,13 @@ function withdrawAmount(amount) {
         else {
             mainSection.innerHTML = `
                 <div class="with_view_fail" id="with_view_fail">
-                    <h3>Cash Withdraw Failied</h3>
-                    <h2>Inficient Balance</h2>
+                    <h3 id="with_view_fail_main_head_1">Cash Withdraw Failied</h3>
+                    <h2 id="with_view_fail_main_head_2">Inficient Balance</h2>
 
-                    <h3>Balance</h3>
-                    <h2>₹ ${balAmount}</h2>
+                    <h3 id="with_view_fail_sub_head_1">Balance</h3>
+                    <h2 id="with_view_fail_sub_head_2">₹ ${balAmount}</h2>
 
-                    <button onclick="showMenu()">Back</button>
+                    <button onclick="showMenu()">Back to Menu</button>
                 </div> 
             `
         }

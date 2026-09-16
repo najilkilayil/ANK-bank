@@ -9,7 +9,7 @@
     --main-bg: #070B14;
     --bg: #0D1422;
     --bg-card: #192235;
-    --text-color : #2F81F7;
+    --text-color: #2F81F7;
     --big-text: rgb(160, 160, 160);
     --bg-border: #24324A;
 }
@@ -310,6 +310,7 @@ body {
 #real_main_name {
     color: #F8FAFC;
 }
+
 .menu_options {
     width: 100%;
     display: flex;
@@ -329,7 +330,8 @@ body {
     color: #F8FAFC;
 }
 
-.menu_options button:hover, .menu_options button:active {
+.menu_options button:hover,
+.menu_options button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
@@ -390,7 +392,8 @@ body {
     font-size: 18px;
 }
 
-.dial_pad button:hover, .dial_pad button:active {
+.dial_pad button:hover,
+.dial_pad button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
@@ -411,8 +414,11 @@ body {
     border: 1px solid #24324A;
     opacity: 0;
 }
+
 #status_show_anim {
-animation: status_show 1.2s;}
+    animation: status_show 1.2s;
+}
+
 @keyframes status_show {
     from {
         opacity: 0;
@@ -454,7 +460,7 @@ animation: status_show 1.2s;}
 .with_view_success,
 .with_view_fail,
 .change_pin_view,
-.change_pin_view_success, 
+.change_pin_view_success,
 .quit_load,
 .quit_view {
     margin-top: 20%;
@@ -468,7 +474,6 @@ animation: status_show 1.2s;}
 }
 
 .bal_view h3,
-.with_view_fail h3,
 .change_pin_view h3,
 .change_pin_view_success h3,
 .quit_view h3 {
@@ -513,7 +518,8 @@ animation: status_show 1.2s;}
     border: 1px solid #24324A;
 }
 
-.bal_view button:hover , .bal_view button:active {
+.bal_view button:hover,
+.bal_view button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
@@ -548,6 +554,7 @@ animation: status_show 1.2s;}
 .depo_success {
     height: auto;
 }
+
 #depo_success_main_head {
     font-size: 26px;
     font-weight: 700;
@@ -587,15 +594,15 @@ animation: status_show 1.2s;}
     border: 1px solid #24324A;
 }
 
-.depo_success button:hover, .depo_success button:active {
+.depo_success button:hover,
+.depo_success button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
 }
 
 .depo_success h3,
-.with_view_success h3
-.with_view_fail h3 {
+.with_view_success h3 .with_view_fail h3 {
     margin-top: 20px;
 }
 
@@ -625,7 +632,8 @@ animation: status_show 1.2s;}
     border: 1px solid #24324A;
 }
 
-.with_money_btns button:hover, .with_money_btns button:active {
+.with_money_btns button:hover,
+.with_money_btns button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
@@ -678,11 +686,13 @@ animation: status_show 1.2s;}
         transform: scale(1);
         letter-spacing: normal;
     }
+
     50% {
         opacity: 1;
         transform: scale(0.9);
         letter-spacing: 4px;
     }
+
     100% {
         opacity: 0.4;
         transform: scale(1);
@@ -728,6 +738,55 @@ animation: status_show 1.2s;}
     font-weight: 600;
     font-size: 18px;
     border: 1px solid #24324A;
+}
+
+/* frame 13 */
+#with_view_fail_main_head_1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #EF4444;
+}
+
+#with_view_fail_main_head_2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #F8FAFC;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+#with_view_fail_sub_head_1 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #A7B0C0;
+    letter-spacing: 1px;
+}
+
+#with_view_fail_sub_head_2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #22D3EE;
+}
+
+.with_view_fail button {
+    height: 50px;
+    width: 40%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #F8FAFC;
+    background: #0D1422;
+    border: 1px solid #24324A;
+}
+
+.with_view_success button:hover,
+.with_view_success button:active,
+.with_view_fail button:hover,
+.with_view_fail button:active {
+    background: #131c30;
+    border: 1px solid #2F81F7;
+    transform: translateY(-2px);
 }
 
 /* frame 14 */
