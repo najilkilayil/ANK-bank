@@ -468,7 +468,6 @@ animation: status_show 1.2s;}
 }
 
 .bal_view h3,
-.with_view_success h3,
 .with_view_fail h3,
 .change_pin_view h3,
 .change_pin_view_success h3,
@@ -639,7 +638,7 @@ animation: status_show 1.2s;}
 
 .with_money_custom_input {
     margin-top: 20px;
-    display: block;
+    display: none;
     width: 100%;
 }
 
@@ -691,9 +690,44 @@ animation: status_show 1.2s;}
     }
 }
 
+/* frame 12 */
+#h3_1st {
+    font-size: 26px;
+    font-weight: 700;
+    color: #22C55E;
+}
+
+#h2_1st {
+    font-size: 34px;
+    font-weight: 700;
+    color: #F8FAFC;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 
 #h3_2nd {
-    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #A7B0C0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#h2_2nd {
+    font-size: 18px;
+    font-weight: 700;
+    color: #22D3EE;
+}
+
+.with_view_success button {
+    height: 50px;
+    width: 40%;
+    background: #0D1422;
+    color: #F8FAFC;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid #24324A;
 }
 
 /* frame 14 */

@@ -528,11 +528,11 @@ function withdrawAmount(amount) {
             balAmount -= amount
             mainSection.innerHTML = `
                 <div class="with_view_success" id="with_view_success">
-                    <h3>Cash Withdrawn Successfully</h3>
-                    <h2>Amount : ₹ ${amount}</h2>
+                    <h3 id="h3_1st">Cash Withdrawn Successfully</h3>
+                    <h2 id="h2_1st">Amount : ₹ ${amount}</h2>
 
                     <h3 id="h3_2nd">Balance</h3>
-                    <h2>₹ ${balAmount}</h2>
+                    <h2 id="h2_2nd">₹ ${balAmount}</h2>
 
                     <button onclick="showMenu()">Back</button>
                 </div>
