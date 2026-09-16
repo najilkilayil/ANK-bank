@@ -473,9 +473,7 @@ body {
     padding-left: 10%;
 }
 
-.bal_view h3,
-.change_pin_view_success h3,
-.quit_view h3 {
+.bal_view h3 {
     font-size: 14px;
     font-weight: 600;
     color: #A7B0C0;
@@ -853,6 +851,29 @@ body {
 }
 
 .change_pin_view button:hover, .change_pin_view button:active {
+    background: #131c30;
+    border: 1px solid #2F81F7;
+    transform: translateY(-2px);
+}
+
+/* frame 16 */
+.change_pin_view_success h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #22C55E;
+}
+
+.change_pin_view_success button {
+    height: 50px;
+    width: 40%;
+    background: #0D1422;
+    color: #F8FAFC;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid #24324A;
+}
+
+.change_pin_view_success button:hover, .change_pin_view_success button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);

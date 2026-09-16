@@ -699,7 +699,7 @@ function changePinSuccess() {
             <div class="change_pin_view_success" id="change_pin_view_success">
                 <h3>Successfully Updated</h3>
     
-                <button onclick="showMenu()">Back</button>
+                <button onclick="showMenu()">Back to Menu</button>
             </div>
         `
     }, 2000);
