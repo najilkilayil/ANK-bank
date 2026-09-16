@@ -717,7 +717,7 @@ function optQuit() {
         mainSection.innerHTML = `
             <div class="quit_view" id="quit_view">
                 <h3>Thank You for using</h3>
-                <h2>ANK Bank</h2>
+                <h2><span>ANK</span> Bank</h2>
             </div>
         `
     }, 2500);

@@ -908,8 +908,22 @@ body {
 }
 
 /* frame 18 */
+.quit_view h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #A7B0C0;
+}
+
 .quit_view h2 {
     font-size: 42px;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    color: #F8FAFC;
+    letter-spacing: -1px;
+}
+
+.quit_view span {
+    color: #2F81F7;
 }
 
 /* #main_menu_in {
