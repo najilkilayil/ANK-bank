@@ -4,10 +4,10 @@ ANK Bank ATM is a virtual ATM Machine *Simulation* using HTML, CSS nad JavaScrip
 
 ## 
 
-In this project user can create account at first to enter the simulation user needs to enter the full name, and other details.
+In this project user can create account at first to enter the simulation user needs to enter the full name, and other details. Then the user can go through all the features such as 'Check Balance', 'Deposit Money', 'Withdraw Money', 'Change PIN' and 'Exit'. Each features options are styled as the same as that of the real ATM. The admin tries maximum to feel and make that similar to ATM Mechine. 
 
-Currently it feels like templete design no much CSS used.
-
+This website is completely looking and appearing like a ATM simulation which is in dark-shade theme.
+ 
 
 ## Functionalities
 
@@ -24,7 +24,8 @@ There are several functions used in this project. Mainly,
 |```moneyInputFun(moneyInput, num)``` | Allow to enter numbers |
 |```withWindow()``` | Shows the withdraw amount option |
 |```customAmountWindow()``` | Allow you to enter custom amount |
-|```loadingWindow()``` | A processing loader ( 2 second )
+|```loadingWindow()``` | A processing loader ( 2 second ) |
+|```errorAlert(text)```| Shows a alert or error notification |
 
 These are the main functions created and used in JS for this project!
 
@@ -87,5 +88,6 @@ So created and coded of the basics and order of the frame then conneccted every 
 - For getting Random account number between the two ranges!
 - moneyInputFun(moneyInput, num) :- used here for understanding the logic.
 - accessing the focus at two inputs in changePIN windows.
+- Used Ai for choosing colour palette.
 
 ----

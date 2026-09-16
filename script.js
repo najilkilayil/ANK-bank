@@ -39,6 +39,8 @@ let changePinInputEl
 let changeConPInInputEl
 let changedPIN
 
+let errorAlertDiv = document.getElementById("error_alert")
+
 welcomeLoad()
 
 function welcomeLoad() {
@@ -733,7 +735,6 @@ function loadingWindow() {
     `
 }
 
-let errorAlertDiv = document.getElementById("error_alert")
 function errorAlert(text) {
     errorAlertDiv.id = ""
     errorAlertDiv.style.display = "block"
