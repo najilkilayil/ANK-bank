@@ -709,7 +709,7 @@ function optQuit() {
     subSection.style.display = "none"
     mainSection.innerHTML = `
         <div class="quit_load" id="quit_load">
-            Quiting....
+            Quitting....
         </div>
     `
 

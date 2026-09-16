@@ -881,13 +881,30 @@ body {
 
 /* frame 17 */
 .quit_load {
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 0;
-    font-size: 26px;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: 600;
+    color: #F8FAFC;
+    letter-spacing: 2px;
+    animation: quit_load_anim 1.5s infinite;
+}
+
+@keyframes quit_load_anim {
+    0% {
+        opacity: 0.4;
+        transform: translateY(3px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+    100% {
+        opacity: 0.4;
+        transform: translateY(3px);
+    }
 }
 
 /* frame 18 */
