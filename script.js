@@ -71,9 +71,9 @@ function AccountNum() {
 }
 
 accInput.value = AccountNum()
-nameInput.value = "Robert John"
-passInput.value = "1111"
-conPassInput.value = "1111"
+// nameInput.value = "Robert John"
+// passInput.value = "1111"
+// conPassInput.value = "1111"
 
 
 
@@ -81,12 +81,14 @@ fillFormSubBtn.addEventListener("click", function (event) {
     event.preventDefault()
 
     if (nameInput.value === "" || balInput.value === "" || passInput.value.length !== 4) {
-        alert("Fill all blanks!")
+        errorAlert("Please enter all required details.")
         return
     }
 
     if (passInput.value !== conPassInput.value) {
-        alert("PIN is not match!")
+        passInput.value = ""
+        conPassInput.value = ""
+        errorAlert("PINs do not match.")
         return
     }
 
@@ -232,6 +234,7 @@ function pinInputFun(Xinput, num) {
         }
         else {
             Xinput.style.color = "#EF4444"
+            errorAlert("Incorrect PIN. Please try again.")
             document.getElementById("check_btn").style.background = "#0D1422"
             document.getElementById("check_btn").style.border = "1px solid #24324A"
             setTimeout(() => {
@@ -648,19 +651,18 @@ function changePinInputFun(num) {
 
     if (num === "enter") {
         if (changePinInputEl.value.length !== 4) {
-            alert("Enter the confirm PIN!")
+            errorAlert("PIN must contain exactly 4 digits.")
             return
         }
 
         if (changePinInputEl.value !== changeConPInInputEl.value) {
-            alert("PIN are not matching!")
+            errorAlert("PINs do not match.")
             changeConPInInputEl.value = ""
             return
         }
 
         changedPIN = changePinInputEl.value
         PIN = changedPIN
-        alert("PIN changed successfully!")
         subSection.style.display = "none"
         changePinSuccess()
     }
@@ -668,24 +670,23 @@ function changePinInputFun(num) {
 
 function updatePIN() {
     if (changePinInputEl.value.length !== 4) {
-        alert("Enter a 4 digit new PIN!")
+        errorAlert("PIN must contain exactly 4 digits.")
         return
     }
 
     if (changeConPInInputEl.value.length !== 4) {
-        alert("Enter the confirm PIN!")
+        errorAlert("Conform PIN is missing.")
         return
     }
 
-    if (changePinInputEl !== changePinInputEl) {
-        alert("PIN are not matching")
+    if (changePinInputEl.value !== changeConPInInputEl.value) {
+        errorAlert("PINs do not match.")
         changeConPInInputEl.value = ""
         return
     }
 
     changedPIN = changePinInputEl.value
     PIN = changedPIN
-    alert("PIN changed successfully!")
     subSection.style.display = "none"
     changePinSuccess()
 }
@@ -730,4 +731,19 @@ function loadingWindow() {
             Processing....
         </div>
     `
+}
+
+let errorAlertDiv = document.getElementById("error_alert")
+function errorAlert(text) {
+    errorAlertDiv.id = ""
+    errorAlertDiv.style.display = "block"
+    errorAlertDiv.textContent = text
+    setTimeout(() => {
+        setTimeout(() => {
+            errorAlertDiv.id = "hide_error_anim"
+            setTimeout(() => {
+                errorAlertDiv.style.display = "none"
+            }, 800);
+        }, 800); 
+    }, 3000);
 }

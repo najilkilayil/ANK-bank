@@ -957,3 +957,49 @@ body {
         opacity: 0;
     }
 } */
+
+/* For all */
+input:focus {
+    outline: none;
+}
+
+
+.error_alert {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    background: #EF4444;
+    padding: 20px;
+    top: 20px;
+    right: 20px;
+    border-radius: 10px;
+    border: 1px solid #EF4444;
+    transition: 0.5s;
+    animation: show_error_anim 0.8s;
+    color: #F8FAFC;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.error_alert:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes show_error_anim {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+
+#hide_error_anim {
+    animation: hide_error_anim 0.8s;
+}
+
+@keyframes hide_error_anim {
+    to {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
