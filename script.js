@@ -235,6 +235,7 @@ function pinInputFun(Xinput, num) {
             document.getElementById("check_btn").style.background = "#0D1422"
             document.getElementById("check_btn").style.border = "1px solid #24324A"
             setTimeout(() => {
+                Xinput.style.color = "white"
                 Xinput.value = ""
                 return
             }, 2000);
