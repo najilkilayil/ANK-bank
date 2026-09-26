@@ -1003,3 +1003,72 @@ input:focus {
         transform: translateX(200px);
     }
 }
+
+/* makeing responsive */
+@media (max-width: 480px) {
+    .form_main {
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        border-radius: 0;
+    }
+
+    .form_main h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .form_main input {
+        width: calc(100% - 5%);
+    }
+
+    .form_main button {
+        width: calc(100% - 30%);
+    }
+    .acc_sum_view {
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    .acc_sum_view div {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: 0;
+    }
+
+    .acc_sum_view h2 {
+        padding-left: 0;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        top: calc(20% + 80px);
+    }
+
+    .acc_sum_view #psub {
+        width: 100%;
+        padding-left: 0;
+        left: 50%;
+        margin-top: 20px;
+        transform: translateX(-50%);
+        position: relative;
+        text-align: center;
+    }
+    .acc_sum_view_subsection {
+        width: 80%;
+    }
+
+    .acc_sum_view p {
+        margin-top: 4px;
+    }
+    .acc_sum_view h3 {
+        padding-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
