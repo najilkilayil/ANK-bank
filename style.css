@@ -1006,6 +1006,22 @@ input:focus {
 
 /* makeing responsive */
 @media (max-width: 480px) {
+    /* frame 2 */
+    .welcome_div {
+        width: 100%;
+        height: 100%;
+        display: none;
+        padding-top: 50%;
+    }
+
+    .welcome_div h1, .welcome_div h3 {
+        animation: none;
+        width: 100%;
+        background-color: transparent;
+        text-align: center;
+    } 
+
+    /* frame 3 */
     .form_main {
         width: 100%;
         height: 100%;
@@ -1025,6 +1041,8 @@ input:focus {
     .form_main button {
         width: calc(100% - 30%);
     }
+
+    /* frame 4 */
     .acc_sum_view {
         width: 100%;
         height: 100%;
