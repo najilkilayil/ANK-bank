@@ -123,14 +123,14 @@ function showAccSummary() {
     `
 
     accSummaryView.style.display = "flex"
-    accSummaryView.id = "move_right_anim"
+    accSummaryView.id = "spl_case_right_anim"
 
     fillFormMain.id = "move_left_anim"
     setTimeout(() => {
         fillFormMain.style.display = "none"
     }, 1500);
     setTimeout(() => {
-        accSummaryView.id = "move_left_anim"
+        accSummaryView.id = "spl_case_left_anim"
         setTimeout(() => {
             accSummaryView.style.display = "none"
         }, 1200);

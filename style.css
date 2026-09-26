@@ -71,7 +71,7 @@ body {
     }
 }
 
-#move_left_anim {
+#move_left_anim, #spl_case_left_anim {
     animation: moveLeft 1.2s ease-in-out forwards;
 }
 
@@ -122,13 +122,13 @@ body {
     }
 }
 
-#move_right_anim {
+#move_right_anim, #spl_case_anim {
     animation: moveRight 1.2s ease-in-out forwards;
 }
 
 @keyframes moveRight {
     0% {
-        transform: translateX(100vw);
+        transform: translateX(100%);
         opacity: 0;
     }
 
@@ -810,7 +810,8 @@ body {
     letter-spacing: 6px;
 }
 
-#change_pin_input:focus, #change_con_pin_input:focus {
+#change_pin_input:focus,
+#change_con_pin_input:focus {
     outline: none;
     border: 1px solid #2F81F7;
 }
@@ -850,7 +851,8 @@ body {
     border: 1px solid #24324A;
 }
 
-.change_pin_view button:hover, .change_pin_view button:active {
+.change_pin_view button:hover,
+.change_pin_view button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
@@ -873,7 +875,8 @@ body {
     border: 1px solid #24324A;
 }
 
-.change_pin_view_success button:hover, .change_pin_view_success button:active {
+.change_pin_view_success button:hover,
+.change_pin_view_success button:active {
     background: #131c30;
     border: 1px solid #2F81F7;
     transform: translateY(-2px);
@@ -897,10 +900,12 @@ body {
         opacity: 0.4;
         transform: translateY(3px);
     }
+
     50% {
         opacity: 1;
         transform: translateY(-3px);
     }
+
     100% {
         opacity: 0.4;
         transform: translateY(3px);
@@ -1006,6 +1011,7 @@ input:focus {
 
 /* makeing responsive */
 @media (max-width: 480px) {
+
     /* frame 2 */
     .welcome_div {
         width: 100%;
@@ -1014,12 +1020,13 @@ input:focus {
         padding-top: 50%;
     }
 
-    .welcome_div h1, .welcome_div h3 {
+    .welcome_div h1,
+    .welcome_div h3 {
         animation: none;
         width: 100%;
         background-color: transparent;
         text-align: center;
-    } 
+    }
 
     /* frame 3 */
     .form_main {
@@ -1077,6 +1084,7 @@ input:focus {
         position: relative;
         text-align: center;
     }
+
     .acc_sum_view_subsection {
         width: 80%;
     }
@@ -1084,9 +1092,43 @@ input:focus {
     .acc_sum_view p {
         margin-top: 4px;
     }
+
     .acc_sum_view h3 {
         padding-left: 0;
         width: 100%;
         text-align: center;
     }
+
+    #spl_case_right_anim {
+        animation: moveRightSpl 1.2s ease-in-out forwards;
+    }
+
+    @keyframes moveRightSpl {
+        0% {
+            transform: translate(100%, -50%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+
+    #spl_case_left_anim {
+        animation: moveLeftSpl 1.2s ease-in-out forwards;
+    }
+
+    @keyframes  moveLeftSpl{
+        0% {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(100%, -50%);
+            opacity: 0;
+        }
+    }
 }
+
