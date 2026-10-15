@@ -1130,5 +1130,30 @@ input:focus {
             opacity: 0;
         }
     }
-}
 
+    /* frame 5 */
+    .real_main {
+        width: 100%;
+        height: 100dvh;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+    }
+
+    .main_section {
+        padding-top: 20px;
+        width: 100%;
+        line-height: 40px;
+    }
+
+    .menu_options button {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+        margin-top: 4%;
+    }
+
+    .sub_section {
+        display: none !important;
+    }
+}
