@@ -1400,4 +1400,25 @@ input:focus {
     .form_main input:focus {
         border: 1pxx solid #2F81F7;
     }
+
+    /* error alert notification */
+    .error_alert {
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: 35px;
+    }
+
+    @keyframes show_error_anim{
+        from {
+            opacity: 0;
+            top: -200px;
+        }
+    }
+
+    @keyframes hide_error_anim {
+        to {
+            opacity: 0;
+            top: -200px;
+        }
+    }
 }
