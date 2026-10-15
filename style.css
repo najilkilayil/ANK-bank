@@ -122,7 +122,7 @@ body {
     }
 }
 
-#move_right_anim, #spl_case_anim {
+#move_right_anim, #spl_case_anim, #spl_case_right_anim {
     animation: moveRight 1.2s ease-in-out forwards;
 }
 
@@ -1395,5 +1395,9 @@ input:focus {
     .quit_view h3 {
         text-align: center;
         margin-top: -50%;
+    }
+
+    .form_main input:focus {
+        border: 1pxx solid #2F81F7;
     }
 }
