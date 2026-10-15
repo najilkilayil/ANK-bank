@@ -1275,4 +1275,20 @@ input:focus {
     #with_error_text_custom {
         font-size: 18px;
     }
+
+    /* frame 12 */
+    .with_view_success {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    #h3_2nd {
+        font-size: 18px;
+    }
+
+    .with_view_success button {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: calc(100% - 20%);
+    }
 }
