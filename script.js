@@ -259,6 +259,7 @@ function pinInputFun(Xinput, num) {
 }
 
 function balWindow() {
+    subSection.innerHTML = ""
     subSection.style.display = "none"
     mainSection.innerHTML = `
         <div class="bal_view" id="bal_view">

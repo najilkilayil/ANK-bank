@@ -1135,15 +1135,26 @@ input:focus {
     .real_main {
         width: 100%;
         height: 100dvh;
-        height: 100vh;
         display: none;
         flex-direction: column;
+        border-radius: 0;
     }
 
-    .main_section {
+    .real_main .main_section {
         padding-top: 20px;
         width: 100%;
         line-height: 40px;
+        height: 100%;
+        min-height: 0;
+        flex: 1 1 100%;
+    }
+
+    .real_main .sub_section {
+        display: none !important;
+        width: 100%;
+        height: 0;
+        flex: 0 0 0;
+        border: none;
     }
 
     .menu_options button {
@@ -1153,24 +1164,40 @@ input:focus {
         margin-top: 4%;
     }
 
-    .real_main:has(#menu_options) .sub_section {
-        display: none;
-    }
-
     /* frame 6 */
-    .real_main:not(:has(#menu_options)) .main_section {
+    .real_main:has(#dial_pad) .main_section {
         width: 100%;
         height: 50%;
+        flex: 0 0 50%;
     }
 
-    .real_main:not(:has(#menu_options)) .sub_section {
+    .real_main:has(#dial_pad) .sub_section {
         width: 100%;
         height: 40%;
+        display: block !important;
+        flex: 0 0 40%;
     }
 
     .dial_pad {
         margin-top: 20px;
         gap: 20px;
         grid-template-columns: repeat(3, 90px);
+    }
+
+    /* frame 7 */
+    .bal_view  {
+        text-align: center;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .bal_view h3, .bal_view p {
+        font-size: 18px;
+    }
+
+    .bal_view button{
+        width: 80%;
+        margin-right: 10%;
+        margin-left: 10%;
     }
 }
