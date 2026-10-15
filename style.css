@@ -605,6 +605,8 @@ body {
 
 
 /* frame 10 */
+
+
 .with_view h3 {
     font-size: 26px;
     font-weight: 700;
@@ -637,6 +639,7 @@ body {
 }
 
 #with_money_btn_other {
+    grid-column: 1 / -1;
     border: 1px solid #22D3EE;
     color: #22D3EE;
 }
@@ -1236,5 +1239,40 @@ input:focus {
         margin-left: 10%;
         margin-right: 10%;
         width: 80%;
+    }
+
+    /* frame 10 */
+    .with_view {
+        padding: 0 8%;
+        align-items: center;
+        margin-top: 0;
+        height: auto;
+    }
+
+    .with_money_btns {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    #with_money_btn_other {
+        grid-column: 1 / -1;
+    }
+
+    .with_money_custom_input {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .with_money_custom_input input {
+        width: 100%;
+        height: 44px;
+        font-size: 22px;
+    }
+
+    #with_error_text_custom {
+        font-size: 18px;
     }
 }

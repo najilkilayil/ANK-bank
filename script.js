@@ -428,6 +428,7 @@ function optWith() {
 }
 
 function withWindow() {
+    subSection.innerHTML = ""
     subSection.style.display = "none"
     mainSection.innerHTML = `
         <div class="with_view" id="with_view">
@@ -441,6 +442,8 @@ function withWindow() {
                <button onclick="withdrawAmount(1000)">₹ 1000</button>
                     
                 <button onclick="withdrawAmount(2000)">₹ 2000</button>
+                <button onclick="withdrawAmount(3000)">₹ 3000</button>
+                
                 <button id="with_money_btn_other">Other</button>
             </div>
 
