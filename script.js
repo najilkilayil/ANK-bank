@@ -732,6 +732,7 @@ function optQuit() {
 }
 
 function loadingWindow() {
+    subSection.innerHTML = ""
     subSection.style.display = "none"
     mainSection.innerHTML = `
         <div class="load_process" id="load_process">
