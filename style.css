@@ -1215,5 +1215,26 @@ input:focus {
         font-size: 18px;
     }
 
-    
+    /* frame 9 */
+    .depo_success {
+        padding-left: 0;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #depo_success_main_head {
+        font-size: 28px;
+    }
+
+    #depo_success_sub_head {
+        font-size: 18px;
+    }
+
+    .depo_success button {
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+    }
 }

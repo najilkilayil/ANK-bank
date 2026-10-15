@@ -379,6 +379,7 @@ function depoWindowSuccess() {
     loadingWindow()
     setTimeout(() => {
         balAmount += Number(depoMoney)
+        subSection.innerHTML = ""
         subSection.style.display = "none"
         mainSection.innerHTML = `
             <div class="depo_success" id="depo_success">
