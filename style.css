@@ -1346,4 +1346,16 @@ input:focus {
         width: 80%;
         margin-top: 70px;
     }
+
+    /* frame 16 */
+    .change_pin_view_success {
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .change_pin_view_success button {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: calc(100% - 20%);
+    }
 }
