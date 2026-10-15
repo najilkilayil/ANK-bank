@@ -1200,4 +1200,20 @@ input:focus {
         margin-right: 10%;
         margin-left: 10%;
     }
+
+    /* frame 8 */
+    .depo_view {
+        margin-left: 10%;
+        padding-left: 0;
+    }
+    .depo_view input {
+        width: auto;
+        margin-right: calc(100% - 10%);
+    }
+
+    #money_input_error_text {
+        font-size: 18px;
+    }
+
+    
 }
