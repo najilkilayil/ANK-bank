@@ -1317,4 +1317,33 @@ input:focus {
         margin-left: 10%;
         margin-right: 10%;
     }
+
+    /* frame 14 */
+    .change_pin_view {
+        margin-top: 0;
+        padding-left: 0;
+        align-items: center;
+    }
+
+    #change_pin_view_main_head {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    #change_pin_input {
+        width: 80%;
+    }
+
+    #change_pin_view_sub_head {
+        margin-bottom: 0;
+    }
+
+    #change_con_pin_input {
+        width: 80%;
+    }
+
+    .change_pin_view button {
+        width: 80%;
+        margin-top: 70px;
+    }
 }
