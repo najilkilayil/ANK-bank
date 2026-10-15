@@ -1,13 +1,13 @@
 # ANK Bank - A virtual ATM
 
-ANK Bank ATM is a virtual ATM Machine *Simulation* using HTML, CSS nad JavaScript. It have the options to check the balance, can deposit and withdraw and as well as can change PIN.
+ANK Bank ATM is a virtual ATM Machine *Simulation* using HTML, CSS nad JavaScript. It have the options to check the balance, can deposit and withdraw and as well as can change PIN. Made screen responsive in desktop and as well as in mobile screen.
 
 ## 
 
 In this project user can create account at first to enter the simulation user needs to enter the full name, and other details. Then the user can go through all the features such as 'Check Balance', 'Deposit Money', 'Withdraw Money', 'Change PIN' and 'Exit'. Each features options are styled as the same as that of the real ATM. The admin tries maximum to feel and make that similar to ATM Mechine. 
 
-This website is completely looking and appearing like a ATM simulation which is in dark-shade theme.
- 
+This website is completely looking and appearing like a ATM simulation which is in dark-shade theme. This website is very usefull for kides for praticeing how the ATM works!
+
 
 ## Functionalities
 
